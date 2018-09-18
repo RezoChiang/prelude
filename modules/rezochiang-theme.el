@@ -30,24 +30,29 @@
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 ;;; Code:
+
+(prelude-require-package 'molokai-theme)
+(prelude-require-package 'twilight-theme)
+(prelude-require-package 'twilight-bright-theme)
+
 (prelude-require-package 'powerline)
 (prelude-require-package 'smart-mode-line)
 (prelude-require-package 'smart-mode-line-powerline-theme)
+
 (require 'powerline)
+;; get rid "Loading a theme can run Lisp code. Really load? (y or n) "
 (setq sml/no-confirm-load-theme t)
 (setq powerline-arrow-shape 'curve)
 (setq powerline-default-separator-dir '(right . left))
 ;; For dark theme
-;; (setq sml/theme 'powerline)
+(setq sml/theme 'powerline)
+;; with t can get rid "Loading a theme can run Lisp code. Really load? (y or n) "
+;; (load-theme 'molokai t)
+
+;; For light theme
 (setq sml/theme 'light-powerline)
+(load-theme 'leuven t)
 (sml/setup)
 
-(prelude-require-package 'twilight-theme)
-(prelude-require-package 'twilight-bright-theme)
-;; (require 'twilight-bright-theme)
-(load-theme 'leuven)
-
-;; For org operations.
-;; from: https://www.reddit.com/r/emacs/comments/3ba645/does_anybody_have_any_real_cool_hydras_to_share/
 (provide 'rezochiang-theme)
 ;;; rezochiang-theme.el ends here
