@@ -1,0 +1,154 @@
+;; 出问题可开, 另外启动时可使用 --debug-init参数
+;; (setq debug-on-error t)
+
+; 设置字体字号, 第二条语句设置daemon模式下的字体
+(set-frame-font "DejaVu Sans Mono 9")
+(setq default-frame-alist '((font . "DejaVu Sans Mono 9")))
+
+(setq god-exempt-major-modes nil)
+(setq god-exempt-predicates nil)
+(defun my-update-cursor ()
+  ;; (setq cursor-type (if (or god-local-mode buffer-read-only) 'box 'bar))
+  (let ((limited-colors-p (> 257 (length (defined-colors)))))
+    (cond (god-local-mode (progn
+                            (set-face-background 'mode-line (if limited-colors-p "white" "#F92672"))
+                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#F92672"))))
+          (t (progn
+               (set-face-background 'mode-line (if limited-colors-p "black" "#000000"))
+               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#000000"))))))
+  )
+(add-hook 'god-mode-enabled-hook 'my-update-cursor)
+(add-hook 'god-mode-disabled-hook 'my-update-cursor)
+
+;; 新增自定义包
+(prelude-require-packages '(
+                            markdown-mode
+                            php-mode
+                            ivy
+                            rainbow-mode
+                            rainbow-delimiters
+                            smex
+                            yasnippet
+                            multiple-cursors
+                            highlight-parentheses
+                            mic-paren
+                            keyfreq
+                            tiny
+                            swiper
+                            wgrep
+                            iedit
+                            ))
+
+;; for org-babel support
+
+;; 定义特定后缀major mode
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
+
+;; 定义编码
+(defvar rezo-coding-default 'utf-8 "默认编码设置")
+
+;; For Flyspell and Ispell
+(ispell-change-dictionary "american" t)
+(cond
+ ((executable-find "hunspell")
+  (setq ispell-program-name (executable-find "hunspell"))
+  (setq ispell-local-dictionary "en_US")
+  (setq ispell-local-dictionary-alist
+        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
+          )))
+
+ ((executable-find "aspell")
+  (setq ispell-program-name "aspell")
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
+
+;; 配置快捷键记录
+(setq keyfreq-excluded-commands
+      '(self-insert-command
+        abort-recursive-edit
+        forward-char
+        backward-char
+        previous-line
+        next-line))
+(keyfreq-mode 1)
+(keyfreq-autosave-mode 1)
+
+
+(highlight-parentheses-mode t)
+(rainbow-delimiters-mode t)
+;;(show-paren-mode t)
+
+;; 手动启动即可
+;; (paredit-mode t)
+;; 因为打开js文件导致操作迟缓，默认关闭 projectile模式
+(projectile-mode -1)
+
+;; 隐藏工具，菜单和滚动条
+;; 注意在24里0是不能修改成nil的
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(display-time-mode 1)
+;; (electric-quote-mode -1)
+(ido-mode t)
+(ivy-mode t)
+(rainbow-mode t)
+(yas-global-mode t)
+
+
+(setq-default
+ pathname-coding-system rezo-coding-default
+ line-spacing 3
+ display-time-interval 10
+  ;; 取消自动备份
+ make-backup-files nil)
+
+(defun rezo-org-capture-tpl-term()
+  (concat "* " (format-time-string "%Y-%m-%d" (current-time)) " %?")
+  )
+
+(defun rezo-org-capture-tpl-note()
+  (concat "** [" (format-time-string "%H:%M" (current-time)) "] %^{keywords, cause or purpose}\t%^g\n%?")
+  )
+
+(defun rezo-org-capture-tpl-plain()
+  (concat "** [" (format-time-string "%H:%M" (current-time)) "] %?\t:未归类:")
+  )
+
+;; 定义org-agenda读取的文件
+(setq org-agenda-files (list rezo-gtd-leagcy rezo-gtd-inbox))
+
+;; 设置回收站目录, 要与 delete-by-moving-to-trash 配合使用
+(setq trash-directory "~/Trash")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(browse-url-browser-function (quote eww-browse-url))
+ '(delete-by-moving-to-trash t)
+ '(ediff-split-window-function (quote split-window-horizontally))
+ '(lua-indent-level 4)
+ '(org-capture-templates
+   (quote
+    (("t" "Term" plain
+      (file rezo-gtd-dict)
+      "%(rezo-org-capture-tpl-term)")
+     ("n" "Note" plain
+      (file rezo-gtd-inbox)
+      "%(rezo-org-capture-tpl-note)")
+     ("p" "Plain" plain
+      (file rezo-gtd-inbox)
+      "%(rezo-org-capture-tpl-plain)"))))
+ '(org-todo-keywords
+   (quote
+    ((sequence "MAYBE(m!)" "TODO(t@/!)" "PROCESSED(p@/!)" "WAITTING(w@/!)" "|" "DONE(d@/!)" "ABORT(a@/!)"))))
+ '(package-selected-packages
+   (quote
+    (window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
