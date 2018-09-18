@@ -45,5 +45,6 @@
 (require 'rezochiang-hydra)
 (require 'rezochiang-windownumber)
 (require 'rezochiang-flycheck)
+(require 'rezochiang-god-mode)
 (require 'rezochiang-oxpublish)
 ;;; prelude-modules.el ends here

@@ -36,25 +36,19 @@
 
 ;; For org operations.
 ;; from: https://www.reddit.com/r/emacs/comments/3ba645/does_anybody_have_any_real_cool_hydras_to_share/
-(defhydra hydra-global-org ()
-  ("t" org-timer-start :exit t)
-  ("s" org-timer-stop :exit t)
-  ("r" org-timer-set-timer :exit t)
-  ("p" org-timer :exit t)
-  ("w" (org-clock-in '(4)) :exit t)
-  ("o" org-clock-out :exit t)
-  ;; Visit the clocked task from any buffer
-  ("j" org-clock-goto :exit t)
-  ("l" org-capture-goto-last-stored :exit t)
-  ("c" hydra-global-all/body :exit t)
-  ("q" nil)
-  )
-
-
-;; For window control
-(defun prev-window ()
-   (interactive)
-   (other-window -1))
+;; (defhydra hydra-global-org ()
+;;   ("t" org-timer-start :exit t)
+;;   ("s" org-timer-stop :exit t)
+;;   ("r" org-timer-set-timer :exit t)
+;;   ("p" org-timer :exit t)
+;;   ("w" (org-clock-in '(4)) :exit t)
+;;   ("o" org-clock-out :exit t)
+;;   ;; Visit the clocked task from any buffer
+;;   ("j" org-clock-goto :exit t)
+;;   ("l" org-capture-goto-last-stored :exit t)
+;;   ("c" hydra-global-all/body :exit t)
+;;   ("q" nil)
+;;   )
 
 
 ;; For projectile operations.
@@ -95,17 +89,12 @@
   )
 
 (defhydra hydra-global-emacsx()
-  ("a" org-agenda :exit t)
   ("b" ido-switch-buffer :exit t)
   ("B" ibuffer :exit t)
-  ("c" org-capture :exit t)
   ("f" ido-find-file :exit t)
   ("F" ido-find-file-other-window :exit t)
-  ("h" previous-buffer :exit t)
   ("i" indent-region :exit t)
-  ("j" avy-goto-char :exit t)
   ("k" ido-kill-buffer :exit t)
-  ("l" next-buffer :exit t)
   ("o" other-window :exit t)
   ("r" read-only-mode :exit t)
   ("s" save-buffer :exit t)
@@ -122,8 +111,6 @@
 
 
 (defhydra hydra-global-emacsc()
-  ("h" winner-undo :exit t)
-  ("l" winner-redo :exit t)
 
   ("q" nil)
   )
@@ -136,8 +123,6 @@
   ("h" hs-minor-mode :exit t)
   ("i" imenu-anywhere :exit t)
   ("g" git-timemachine :exit t)
-  ("o" occur :exit t)
-  ("O" clone-indirect-buffer-other-window :exit t)
   ("t" tiny-expand :exit t)
 
   ("q" nil)
@@ -154,27 +139,67 @@
   )
 
 ;; Main Entrance.
-(defhydra hydra-global-all()
-  ("b" ido-switch-buffer :exit t)
-  ("c" hydra-global-emacsc/body :exit t)
-  ("/" hydra-hs-mode/body :exit t)
-  ("M" smex :exit t)
+(defhydra hydra-global-all(:color pink :hint nil)
+  "
+Shortcuts Buffer^
+-----------------------------------------------------------------------
+_bb_ : ido-switch-buffer         _bi_ : ibuffer
+_bp_ : previous-buffer           _bn_ : next-buffer
+_bc_ : clone-buffer              _b4c_ : clone-indirect-buffer-other-window
+[_c_] : emacs C-c functions
+[_ee_] : emms-mode-control
+_ff_ : ido-find-file             _fb_ : ido-find-file-ow
+_fp_ : projectile-find-file      _jj_ : avy-goto-char
+_kk_ : kill-this-buffer          _ki_ : ido-kill-buffer
+[_m_] : misc functions
+_oa_ : org-agenda                _oo_ : org-capture
+_occ_: org-clock-goto           _ocb_ : org-clock-in          _oce: org-clock-out
+_ott_: org-clock-goto           _ocb_ : org-clock-in          _oce: org-clock-out
+_oa_ : org-agenda                _oo_ : org-capture
+_so_ : occur                     _ss_ : swiper                _sx_ : smex
+_ww_ : delete-other-windows      _wp_ : winner-undo           _wn_ : winner-redo
+_w1_ : delete-window             _w2_ : split-window-below    _w3_ : split-window-right
+[_x_] : emacs C-x functions
+_q_ : exit
+"
+  ("bb" ido-switch-buffer :exit t)
+  ("bi" ibuffer :exit t)
+  ("bp" previous-buffer :exit t)
+  ("bn" next-buffer :exit t)
+  ("bc" clone-indirect-buffer :exit t)
+  ("bk" kill-this-buffer :exit t)
+  ("b4c" clone-indirect-buffer-other-window :exit t)
+  ("ee" hydra-global-emms/body :exit t)
+  ("ff" ido-find-file :exit t)
+  ("fb" ido-find-file-other-window :exit t)
+  ("fp" projectile-find-file :exit t)
+  ("jj" avy-goto-char :exit t)
+  ("kk" kill-this-buffer :exit t)
+  ("ki" ido-kill-buffer :exit t)
   ("m" hydra-global-misc/body :exit t)
-  ("n" hydra-narrow/body :exit t)
-  ("O" hydra-global-org/body :exit t)
-  ("o" evil-jump-backward :exit t)
-  ("p" hydra-global-projectile/body :exit t)
-  ("s" swiper :exit t)
-  ("w" prev-window :exit t)
+  ("oa" org-agenda :exit t)
+  ("oo" org-capture :exit t)
+  ("occ" org-clock-goto :exit t)
+  ("ocb" org-clock-in :exit t)
+  ("oce" org-clock-out :exit t)
+  ("ott" org-timer-set-timer :exit t)
+  ("otb" org-timer-start :exit t)
+  ("ote" org-timer-stop :exit t)
+  ("so" occur :exit t)
+  ("ss" swiper :exit t)
+  ("sx" smex :exit t)
+  ("ww" delete-other-windows :exit t)
+  ("wp" winner-undo :exit t)
+  ("wn" winner-redo :exit t)
+  ("w1" delete-window :exit t)
+  ("w2" split-window-below :exit t)
+  ("w3" split-window-right :exit t)
+
 
   ("x" hydra-global-emacsx/body :exit t)
-  ("[" evil-emacs-state :exit t)
-  ("]" evil-exit-emacs-state :exit t)
-
-  ("es" hydra-global-emms/body :exit t)
-  ("q" evil-execute-in-normal-state :exit t)
-  ("Q" nil)
-  )
+  ("c" hydra-global-emacsc/body :exit t)
+  ("q" nil)
+)
 
 
 ;; (global-unset-key (kbd "C-z"))

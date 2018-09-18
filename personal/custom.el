@@ -5,21 +5,6 @@
 (set-frame-font "DejaVu Sans Mono 9")
 (setq default-frame-alist '((font . "DejaVu Sans Mono 9")))
 
-(setq god-exempt-major-modes nil)
-(setq god-exempt-predicates nil)
-(defun my-update-cursor ()
-  ;; (setq cursor-type (if (or god-local-mode buffer-read-only) 'box 'bar))
-  (let ((limited-colors-p (> 257 (length (defined-colors)))))
-    (cond (god-local-mode (progn
-                            (set-face-background 'mode-line (if limited-colors-p "white" "#F92672"))
-                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#F92672"))))
-          (t (progn
-               (set-face-background 'mode-line (if limited-colors-p "black" "#000000"))
-               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#000000"))))))
-  )
-(add-hook 'god-mode-enabled-hook 'my-update-cursor)
-(add-hook 'god-mode-disabled-hook 'my-update-cursor)
-
 ;; 新增自定义包
 (prelude-require-packages '(
                             markdown-mode
