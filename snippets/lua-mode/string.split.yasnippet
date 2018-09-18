@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: split(string.gmatch)    
+# key: string.split
+# --
+for ${1:match} in string.gmatch(${2:string}, "([^,]+)[${3:delimiter}]*%s*") do
+    ${4:table.insert(${5:matchs}, ${6:match})}
+end

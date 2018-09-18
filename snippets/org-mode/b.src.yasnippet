@@ -1,0 +1,12 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: source code block
+# key: b.src
+# contributor: Giepher Chiang
+# --
+#+NAME: ${1:name}
+# key: src
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+#+BEGIN_SRC ${2:language}
+$3
+#+END_SRC
