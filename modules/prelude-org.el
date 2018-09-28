@@ -64,6 +64,7 @@
                              (js . t)
                              (shell . t)
                              (sql . t)
+                             (lua . t)
                              ))
 
 (provide 'prelude-org)
