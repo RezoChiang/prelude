@@ -88,7 +88,13 @@
   ("q" nil)
   )
 
-(defhydra hydra-global-emacsx()
+(defhydra hydra-global-emacsx(:color pink :hint nil)
+  "
+Alias C-x^
+-----------------------------------------------------------------------
+_rr_ : point to register        _rj_ : jump to register        _ri_ : insert register
+_q_ : exit
+"
   ("b" ido-switch-buffer :exit t)
   ("B" ibuffer :exit t)
   ("f" ido-find-file :exit t)
@@ -96,7 +102,11 @@
   ("i" indent-region :exit t)
   ("k" ido-kill-buffer :exit t)
   ("o" other-window :exit t)
-  ("r" read-only-mode :exit t)
+
+  ("rr" point-to-register :exit t)
+  ("rj" jump-to-register :exit t)
+  ("ri" insert-register :exit t)
+
   ("s" save-buffer :exit t)
   ("u" undo-tree-visualize :exit t)
   ("w" write-file :exit t)
@@ -109,8 +119,8 @@
   ("q" nil)
   )
 
-
 (defhydra hydra-global-emacsc()
+  ("r" read-only-mode :exit t)
 
   ("q" nil)
   )
@@ -154,8 +164,9 @@ _kk_ : kill-this-buffer          _ki_ : ido-kill-buffer
 [_m_] : misc functions
 _oa_ : org-agenda                _oo_ : org-capture
 _occ_: org-clock-goto           _ocb_ : org-clock-in          _oce: org-clock-out
-_ott_: org-clock-goto           _ocb_ : org-clock-in          _oce: org-clock-out
-_oa_ : org-agenda                _oo_ : org-capture
+_ott_: org-timer-set-timer      _ocb_ : org-timer-start       _oce: org-timer-stop
+_osb_: org-schedule             _ose_ : org-deadline          _oa_ : org-agenda
+_oo_ : org-capture
 _so_ : occur                     _ss_ : swiper                _sx_ : smex
 _ww_ : delete-other-windows      _wp_ : winner-undo           _wn_ : winner-redo
 _w1_ : delete-window             _w2_ : split-window-below    _w3_ : split-window-right
@@ -185,6 +196,8 @@ _q_ : exit
   ("ott" org-timer-set-timer :exit t)
   ("otb" org-timer-start :exit t)
   ("ote" org-timer-stop :exit t)
+  ("osb" org-schedule :exit t)
+  ("ose" org-deadline :exit t)
   ("so" occur :exit t)
   ("ss" swiper :exit t)
   ("sx" smex :exit t)
@@ -217,6 +230,7 @@ _q_ : exit
 
 (global-unset-key (kbd "C-s"))
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+
 
 (global-unset-key (kbd "<f12>"))
 (global-set-key (kbd "<f12>") 'smex)
