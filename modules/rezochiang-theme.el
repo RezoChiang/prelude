@@ -52,7 +52,21 @@
 ;; For light theme
 (setq sml/theme 'light-powerline)
 (load-theme 'leuven t)
+;; (load-theme 'solarized-light t)
 (sml/setup)
+;; 2018/10/10 亮色主题下修复undo-tree不可见问题
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background "white" :foreground "#1B1D1E"))))
+ '(undo-tree-visualizer-active-branch-face ((t (:inherit default :foreground "#403D3D" :weight bold))))
+ '(undo-tree-visualizer-current-face ((t (:foreground "#1E0E10"))))
+ '(undo-tree-visualizer-default-face ((t (:inherit shadow))))
+ '(undo-tree-visualizer-register-face ((t (:foreground "#E6DB74"))))
+ '(undo-tree-visualizer-unmodified-face ((t (:foreground "#66D9EF")))))
+
 
 (provide 'rezochiang-theme)
 ;;; rezochiang-theme.el ends here
