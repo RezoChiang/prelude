@@ -94,6 +94,7 @@ Alias C-x^
 -----------------------------------------------------------------------
 _rr_ : point to register        _rj_ : jump to register        _ri_ : insert register
 _q_ : exit
+_x_ : pop-global-mark
 "
   ("b" ido-switch-buffer :exit t)
   ("B" ibuffer :exit t)
@@ -110,6 +111,7 @@ _q_ : exit
   ("s" save-buffer :exit t)
   ("u" undo-tree-visualize :exit t)
   ("w" write-file :exit t)
+  ("x" pop-global-mark :exit t)
 
   ("0" delete-window :exit t)
   ("1" delete-other-windows :exit t)
