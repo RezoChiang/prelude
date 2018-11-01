@@ -104,6 +104,10 @@ _x_ : pop-global-mark
   ("k" ido-kill-buffer :exit t)
   ("o" other-window :exit t)
 
+  ("nd" narrow-to-defun :exit t)
+  ("ne" org-narrow-to-element :exit t)
+  ("nw" widen :exit t)
+
   ("rr" point-to-register :exit t)
   ("rj" jump-to-register :exit t)
   ("ri" insert-register :exit t)
@@ -183,6 +187,7 @@ _q_ : exit
   ("bk" kill-this-buffer :exit t)
   ("b4c" clone-indirect-buffer-other-window :exit t)
   ("ee" hydra-global-emms/body :exit t)
+  ("fr" recentf-open-files :exit t)
   ("ff" ido-find-file :exit t)
   ("fb" ido-find-file-other-window :exit t)
   ("fp" projectile-find-file :exit t)
