@@ -33,9 +33,11 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(js2-mode json-mode))
+(prelude-require-packages '(js2-mode json-mode ag xref js2-refactor xref-js2))
 
 (require 'js2-mode)
+(require 'js2-refactor)
+(require 'xref-js2)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'"    . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
@@ -48,9 +50,12 @@
        (setq-local electric-layout-rules '((?\; . after)))
        (setq mode-name "JS2")
        (js2-imenu-extras-mode +1))
-
      (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
 
+     (define-key js2-mode-map (kbd "M-.") nil)
+     (add-hook 'js2-mode-hook (lambda ()
+                                (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+     (add-hook 'js2-mode-hook #'js2-refactor-mode)
      (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
 
 (provide 'prelude-js)

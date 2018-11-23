@@ -232,7 +232,7 @@ _q_ : exit
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
 
 
-(define-key evil-normal-state-map (kbd "SPC") 'hydra-global-all/body)
+;; (define-key evil-normal-state-map (kbd "SPC") 'hydra-global-all/body)
 (global-set-key (kbd "M-]") 'hydra-global-all/body)
 
 (global-unset-key (kbd "C-s"))
