@@ -130,10 +130,15 @@
     ((sequence "MAYBE(m!)" "TODO(t@/!)" "PROCESSED(p@/!)" "WAITTING(w@/!)" "|" "DONE(d@/!)" "ABORT(a@/!)"))))
  '(package-selected-packages
    (quote
-    (window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
+    (ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background "white" :foreground "#1B1D1E"))))
+ '(undo-tree-visualizer-active-branch-face ((t (:inherit default :foreground "#403D3D" :weight bold))))
+ '(undo-tree-visualizer-current-face ((t (:foreground "#1E0E10"))))
+ '(undo-tree-visualizer-default-face ((t (:inherit shadow))))
+ '(undo-tree-visualizer-register-face ((t (:foreground "#E6DB74"))))
+ '(undo-tree-visualizer-unmodified-face ((t (:foreground "#66D9EF")))))
