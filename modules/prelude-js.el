@@ -33,7 +33,7 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(js2-mode json-mode ag xref js2-refactor xref-js2))
+(prelude-require-packages '(js2-mode json-mode ag xref js2-refactor xref-js2 js-doc))
 
 (require 'js2-mode)
 (require 'js2-refactor)
@@ -48,8 +48,11 @@
      (defun prelude-js-mode-defaults ()
        ;; electric-layout-mode doesn't play nice with smartparens
        (setq-local electric-layout-rules '((?\; . after)))
-       (setq mode-name "JS2")
-       (js2-imenu-extras-mode +1))
+       ;; 2018/11/27 因为在大文件(2w行+)删除括号时, smartparens会导致卡顿, 所以关闭之
+       (smartparens-mode nil)
+       (setq mode-name "JS2"))
+       ;; 2018/11/27 因为打开和编辑大文件卡顿, 且该功能使用很少, 注释之
+       ;; (js2-imenu-extras-mode +1))
      (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
 
      (define-key js2-mode-map (kbd "M-.") nil)

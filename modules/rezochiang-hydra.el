@@ -243,4 +243,5 @@ _q_ : exit
 (global-set-key (kbd "<f12>") 'smex)
 
 (provide 'rezochiang-hydra)
+;;; 2019-03-14 因更换evil而废弃
 ;;; rezochiang-hydra.el ends here

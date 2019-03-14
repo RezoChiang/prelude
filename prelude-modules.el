@@ -42,7 +42,7 @@
 (require 'prelude-xml)
 (require 'prelude-yaml)
 (require 'rezochiang-emms)
-(require 'rezochiang-hydra)
+;;(require 'rezochiang-hydra)
 (require 'rezochiang-windownumber)
 (require 'rezochiang-flycheck)
 (require 'rezochiang-god-mode)

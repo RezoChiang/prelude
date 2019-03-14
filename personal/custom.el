@@ -3,10 +3,12 @@
 
 ; 设置字体字号, 第二条语句设置daemon模式下的字体
 (set-frame-font "DejaVu Sans Mono 9")
+(set-face-attribute 'org-table nil :family "Noto Sans CJK SC Light")
 (setq default-frame-alist '((font . "DejaVu Sans Mono 9")))
 
 ;; 新增自定义包
 (prelude-require-packages '(
+                            evil-matchit
                             markdown-mode
                             php-mode
                             ivy
@@ -19,6 +21,7 @@
                             mic-paren
                             keyfreq
                             tiny
+;;                            helm-swoop
                             swiper
                             wgrep
                             iedit
@@ -28,6 +31,9 @@
 
 ;; 定义特定后缀major mode
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
+
+;; 2018/11/27 垂直分割
+(setq swoop-window-split-direction: 'split-window-vertically)
 
 ;; 定义编码
 (defvar rezo-coding-default 'utf-8 "默认编码设置")
@@ -130,7 +136,7 @@
     ((sequence "MAYBE(m!)" "TODO(t@/!)" "PROCESSED(p@/!)" "WAITTING(w@/!)" "|" "DONE(d@/!)" "ABORT(a@/!)"))))
  '(package-selected-packages
    (quote
-    (ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
+    (rjsx-mode evil-matchit js-doc helm-swoop ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

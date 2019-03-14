@@ -35,6 +35,7 @@
 ;;; goto-chg lets you use the g-; and g-, to go to recent changes
 ;;; evil-visualstar enables searching visual selection with *
 ;;; evil-numbers enables vim style numeric incrementing and decrementing
+;;; evil-leader lets you use leaderkey space like spacemacs;
 
 (prelude-require-packages '(evil goto-chg evil-surround evil-visualstar evil-numbers evil-leader))
 
@@ -111,26 +112,47 @@
   (kbd "C-S-u") 'rezochiang-evil-scroll-up-other-window)
 
 (evil-leader/set-key
+  "<SPC>" 'keyboard-quit
+  "<ESC>" 'keyboard-quit
   "1" 'delete-other-windows
   "2" 'winner-undo
   "3" 'ido-switch-buffer
-  "4" 'smex
+  "4" 'counsel-M-x
   "0" 'delete-window
+  "%" 'evilmi-jump-items
+  "-" 'hs-hide-level
+  "=" 'hs-toggle-hiding
   "["  'previous-buffer
   "]"  'next-buffer
 
   "bb" 'ido-switch-buffer
   "bc" 'clone-indirect-buffer
+  "bd" 'ediff-buffers
   "bi" 'ibuffer
   "bk" 'kill-buffer
   "bn" 'next-buffer
   "bp" 'previous-buffer
 
+  "eei" 'indent-region
   "eee" 'mc/edit-lines
   "eep" 'pop-global-mark
   "eem" 'mc/mark-all-like-this
-  "edb" 'ediff-buffers
   "edf" 'ediff
+  "eff" 'hs-hide-level
+  "efe" 'hs-toggle-hiding
+  "efh" 'hs-minor-mode
+
+  "eme" 'emms-start
+  "emE" 'emms-stop
+  "emf" 'emms-next
+  "emd" 'emms-previous
+  "emp" 'emms-pause
+  "emi" 'emms-show
+  "emh" 'emms-shuffle
+  "eml" 'emms-playlist-mode-go
+  "emr" 'emms-toggle-repeat-track
+  "emR" 'emms-toggle-repeat-playlist
+
 
   "fb" 'ido-find-file-other-window
   "ff" 'ido-find-file
@@ -157,6 +179,7 @@
   "so" 'occur
   "sp" 'evil-search-backward
   "ss" 'swiper
+;;  "ss" 'helm-swoop
 
   "ww" 'delete-other-windows
   "wp" 'winner-undo
@@ -181,7 +204,7 @@
   "xs" 'save-buffer
   "xu" 'undo-tree-visualize
   "xw" 'write-file
-  "xx" 'smex
+  "xx" 'exchange-point-and-mark
   "x0" 'delete-window
   "x1" 'delete-other-windows
   "x2" 'split-window-below
