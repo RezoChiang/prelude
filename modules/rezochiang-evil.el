@@ -190,6 +190,7 @@
 
   "xb" 'ido-switch-buffer
   "xB" 'ibuffer
+  "xd" 'dired
   "xf" 'ido-find-file
   "xF" 'ido-find-file-other-window
   "xi" 'indent-region
