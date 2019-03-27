@@ -22,3 +22,17 @@
 (defvar rezo-blog-publish-dir (expand-file-name "publish/" rezo-blog-dir) "html发布目标目录" )
 (defvar rezo-blog-theme-dir (expand-file-name "themes" rezo-blog-dir) "主题目录" )
 (defvar rezo-blog-theme "even" "主题名,须作为目录存在于主题目录" )
+
+;; For Flyspell and Ispell
+(ispell-change-dictionary "american" t)
+(cond
+ ((executable-find "hunspell")
+  (setq ispell-program-name (executable-find "hunspell"))
+  (setq ispell-local-dictionary "en_US")
+  (setq ispell-local-dictionary-alist
+        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
+          )))
+
+ ((executable-find "aspell")
+  (setq ispell-program-name "aspell")
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))

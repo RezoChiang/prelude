@@ -1,6 +1,8 @@
 ;;; Uncomment the modules you'd like to use and restart Prelude afterwards
 
 (require 'rezochiang-theme)
+(require 'rezochiang-windownumber)
+(require 'rezochiang-evil)
 
 ;; Emacs IRC client
 (require 'prelude-erc)
@@ -45,9 +47,7 @@
 (require 'prelude-yaml)
 (require 'rezochiang-emms)
 ;;(require 'rezochiang-hydra)
-(require 'rezochiang-windownumber)
 (require 'rezochiang-flycheck)
 (require 'rezochiang-god-mode)
 (require 'rezochiang-oxpublish)
-(require 'rezochiang-evil)
 ;;; prelude-modules.el ends here

@@ -38,20 +38,6 @@
 ;; 定义编码
 (defvar rezo-coding-default 'utf-8 "默认编码设置")
 
-;; For Flyspell and Ispell
-(ispell-change-dictionary "american" t)
-(cond
- ((executable-find "hunspell")
-  (setq ispell-program-name (executable-find "hunspell"))
-  (setq ispell-local-dictionary "en_US")
-  (setq ispell-local-dictionary-alist
-        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
-          )))
-
- ((executable-find "aspell")
-  (setq ispell-program-name "aspell")
-  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
-
 ;; 配置快捷键记录
 (setq keyfreq-excluded-commands
       '(self-insert-command
