@@ -1,4 +1,4 @@
-;;; rezochiang-flycheck.el --- flycheck setup.
+;;; rezo-flycheck.el --- flycheck setup.
 ;;
 ;; Copyright © 2011-2017 Rezo.Chiang.
 ;;
@@ -86,6 +86,5 @@
 
 (setq flycheck-check-syntax-automatically '(save mode-enable))
 ;; the default value was '(save idle-change new-line mode-enabled)
-(add-hook 'js2-mode-hook 'flycheck-mode)
-(provide 'rezochiang-flycheck)
-;;; rezochiang-flycheck.el ends here
+(provide 'rezo-flycheck)
+;;; rezo-flycheck.el ends here

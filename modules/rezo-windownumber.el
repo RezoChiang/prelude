@@ -1,4 +1,4 @@
-;;; rezochiang-windownumber.el --- configure window-number.
+;;; rezo-windownumber.el --- configure window-number.
 ;;
 ;; Copyright © 2011-2017 Rezo.Chiang.
 ;;
@@ -37,5 +37,5 @@
 (window-number-mode)
 (window-number-meta-mode)
 
-(provide 'rezochiang-windownumber)
-;;; rezochiang-windownumber.el ends here
+(provide 'rezo-windownumber)
+;;; rezo-windownumber.el ends here

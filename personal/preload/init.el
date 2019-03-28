@@ -36,3 +36,8 @@
  ((executable-find "aspell")
   (setq ispell-program-name "aspell")
   (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
+
+(defcustom prelude-theme 'leuven
+  "The default color theme, change this in your /personal/preload config."
+  :type 'symbol
+  :group 'prelude)

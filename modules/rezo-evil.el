@@ -1,4 +1,4 @@
-;;; rezochiang-evil.el --- Emacs Prelude: evil-mode configuration.
+;;; rezo-evil.el --- Emacs Prelude: evil-mode configuration.
 ;;
 ;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
@@ -97,19 +97,19 @@
 (define-key evil-visual-state-map (kbd "<") 'prelude-shift-left-visual)
 
 ;; Scrolling
-(defun rezochiang-evil-scroll-down-other-window ()
+(defun rezo-evil-scroll-down-other-window ()
   (interactive)
   (scroll-other-window))
 
-(defun rezochiang-evil-scroll-up-other-window ()
+(defun rezo-evil-scroll-up-other-window ()
   (interactive)
   (scroll-other-window '-))
 
 (define-key evil-normal-state-map
-  (kbd "C-S-d") 'rezochiang-evil-scroll-down-other-window)
+  (kbd "C-S-d") 'rezo-evil-scroll-down-other-window)
 
 (define-key evil-normal-state-map
-  (kbd "C-S-u") 'rezochiang-evil-scroll-up-other-window)
+  (kbd "C-S-u") 'rezo-evil-scroll-up-other-window)
 
 (evil-leader/set-key
   "<SPC>" 'keyboard-quit
@@ -212,4 +212,4 @@
   "x3" 'split-window-right
   )
 
-(provide 'rezochiang-evil)
+(provide 'rezo-evil)

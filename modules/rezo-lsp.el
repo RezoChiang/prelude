@@ -1,4 +1,4 @@
-;;; prelude-lsp.el --- lsp-mode setup
+;;; rezo-lsp.el --- lsp-mode setup
 ;;
 ;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
@@ -34,34 +34,10 @@
 
 (prelude-require-packages '(company-lsp
                             lsp-mode
-                            lsp-ui
-                            use-package
-                            ))
+                            lsp-ui))
 
 (require 'lsp-ui)
 (require 'lsp-ui-imenu)
-(require 'use-package)
-
-(setq lsp-language-id-configuration '((java-mode . "java")
-                                      (python-mode . "python")
-                                      (gfm-view-mode . "markdown")
-                                      (rust-mode . "rust")
-                                      (css-mode . "css")
-                                      (xml-mode . "xml")
-                                      (c-mode . "c")
-                                      (c++-mode . "cpp")
-                                      (objc-mode . "objective-c")
-                                      (web-mode . "html")
-                                      (html-mode . "html")
-                                      (sgml-mode . "html")
-                                      (mhtml-mode . "html")
-                                      (go-mode . "go")
-                                      (haskell-mode . "haskell")
-                                      (php-mode . "php")
-                                      (json-mode . "json")
-                                      (js-mode . "javascript")
-                                      (js2-mode . "javascript")
-                                      (typescript-mode . "typescript")))
 
 (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
 (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
@@ -77,6 +53,7 @@
 (setq lsp-ui-doc-enable t)
 (setq lsp-ui-peek-enable t)
 (setq lsp-ui-peek-always-show t)
+(require 'rezo-lsp-c)
 
-(provide 'prelude-lsp)
-;;; prelude-lsp.el ends here
+(provide 'rezo-lsp)
+;;; rezo-lsp.el ends here
