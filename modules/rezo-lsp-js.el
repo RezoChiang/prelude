@@ -47,7 +47,6 @@
                'typescript-mode-hook
                ))
   (add-hook hook '(lambda ()
-                    (run-with-timer "5sec" nil (lambda () (flymake-mode -1)))
                     (eglot-ensure)
                     )))
 
