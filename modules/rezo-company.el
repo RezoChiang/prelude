@@ -35,7 +35,7 @@
 
 (require 'company)
 
-(setq company-idle-delay 0.1)
+(setq company-idle-delay 0.5)
 (setq company-show-numbers t)
 (setq company-tooltip-limit 10)
 (setq company-minimum-prefix-length 1)

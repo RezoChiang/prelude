@@ -33,9 +33,11 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(eglot typescript-mode))
+(prelude-require-packages '(eglot typescript-mode json-mode))
 (require 'eglot)
 
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)
 ;;; Code:
 
 ;; It is forbidden to display help files in minibuffer, too annoying.
@@ -47,7 +49,6 @@
                'typescript-mode-hook
                ))
   (add-hook hook '(lambda ()
-                    (run-with-timer "5sec" nil (lambda () (flymake-mode -1)))
                     (eglot-ensure)
                     )))
 
