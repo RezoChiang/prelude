@@ -11,8 +11,8 @@
 
 ;; Emacs IRC client
 ;;(require 'prelude-erc)
-;; (require 'prelude-ido) ;; Super charges Emacs completion for C-x C-f and more
-;;(require 'prelude-ivy) ;; A mighty modern alternative to ido
+(require 'prelude-ido) ;; Super charges Emacs completion for C-x C-f and more
+(require 'prelude-ivy) ;; A mighty modern alternative to ido
 ;; (require 'prelude-helm) ;; Interface for narrowing and search
 ;; (require 'prelude-helm-everywhere) ;; Enable Helm everywhere
 ;; (require 'prelude-key-chord) ;; Binds useful features to key combinations
@@ -30,7 +30,7 @@
 ;; (require 'prelude-elixir)
 ;;(require 'prelude-go)
 ;; (require 'prelude-haskell)
-;; (require 'prelude-js)
+(require 'prelude-js)
 ;; (require 'prelude-latex)
 ;;(require 'prelude-lisp)
 ;; (require 'prelude-ocaml)
@@ -51,7 +51,7 @@
 ;;(require 'rezochiang-hydra)
 (require 'rezo-lsp-c)
 ;; (require 'rezo-lsp-java)
-(require 'rezo-lsp-js)
+;;(require 'rezo-lsp-js)
 ;; (require 'rezochiang-god-mode)
 ;; (require 'rezochiang-oxpublish)
 ;; (require 'rezochiang-emms)

@@ -106,23 +106,9 @@
  '(delete-by-moving-to-trash t)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(lua-indent-level 4)
- '(org-capture-templates
-   (quote
-    (("t" "Term" plain
-      (file rezo-gtd-dict)
-      "%(rezo-org-capture-tpl-term)")
-     ("n" "Note" plain
-      (file rezo-gtd-inbox)
-      "%(rezo-org-capture-tpl-note)")
-     ("p" "Plain" plain
-      (file rezo-gtd-inbox)
-      "%(rezo-org-capture-tpl-plain)"))))
- '(org-todo-keywords
-   (quote
-    ((sequence "MAYBE(m!)" "TODO(t@/!)" "PROCESSED(p@/!)" "WAITTING(w@/!)" "|" "DONE(d@/!)" "ABORT(a@/!)"))))
  '(package-selected-packages
    (quote
-    (protobuf-mode typescript-mode rjsx-mode evil-matchit js-doc helm-swoop ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
+    (lsp-java protobuf-mode typescript-mode rjsx-mode evil-matchit js-doc helm-swoop ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

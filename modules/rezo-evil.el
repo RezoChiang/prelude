@@ -160,6 +160,7 @@
   "fr" 'recentf-open-files
 
   "cr" 'read-only-mode
+  "j" 'avy-goto-char
 
   "kk" 'kill-this-buffer
 
@@ -181,12 +182,13 @@
   "ss" 'swiper
 ;;  "ss" 'helm-swoop
 
-  "ww" 'delete-other-windows
+  "wd" 'delete-window
+  "ww" 'other-window
+  "wq" 'quit-window
   "wp" 'winner-undo
   "wn" 'winner-redo
-  "w1" 'delete-window
-  "w2" 'split-window-below
-  "w3" 'split-window-right
+  "ws" 'split-window-horizontally
+  "wv" 'split-window-vertically
 
   "xb" 'ido-switch-buffer
   "xB" 'ibuffer
@@ -210,6 +212,8 @@
   "x1" 'delete-other-windows
   "x2" 'split-window-below
   "x3" 'split-window-right
+
+  "y" 'easy-kill
   )
 
 (provide 'rezo-evil)
