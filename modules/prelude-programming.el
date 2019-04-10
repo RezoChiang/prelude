@@ -36,8 +36,8 @@
   (set (make-local-variable 'comment-auto-fill-only-comments) t))
 
 ;; show the name of the current function definition in the modeline
-(require 'which-func)
-(which-function-mode 1)
+;; (require 'which-func)
+;; (which-function-mode 1)
 
 ;; font-lock annotations like TODO in source code
 (require 'hl-todo)
