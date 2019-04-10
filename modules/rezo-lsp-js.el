@@ -33,24 +33,22 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(eglot typescript-mode json-mode))
-(require 'eglot)
+(prelude-require-packages '(typescript-mode json-mode))
+(require 'lsp-mode)
+(require 'lsp-ui)
 
 (setq js-indent-level 2)
 (setq typescript-indent-level 2)
+
 ;;; Code:
 
-;; It is forbidden to display help files in minibuffer, too annoying.
-(setq eglot-ignored-server-capabilites '(:hoverProvider))
-
-(dolist (hook (list
-               'js-mode-hook
-               'rjsx-mode-hook
-               'typescript-mode-hook
-               ))
-  (add-hook hook '(lambda ()
-                    (eglot-ensure)
-                    )))
+(add-hook 'js-mode-hook #'lsp)
+(add-hook 'rjsx-mode-hook #'lsp)
+(add-hook 'typescript-mode-hook #'lsp)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(add-hook 'js-mode-hook 'flycheck-mode)
+(add-hook 'rjsx-mode-hook 'flycheck-mode)
+(add-hook 'typescript-mode-hook 'flycheck-mode)
 
 (provide 'rezo-lsp-js)
 

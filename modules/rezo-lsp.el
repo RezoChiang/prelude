@@ -37,7 +37,9 @@
                             lsp-ui))
 
 (require 'lsp-ui)
+(require 'company-lsp)
 (require 'lsp-ui-imenu)
+(setq lsp-print-io t)
 
 (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
 (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
@@ -53,7 +55,10 @@
 (setq lsp-ui-doc-enable t)
 (setq lsp-ui-peek-enable t)
 (setq lsp-ui-peek-always-show t)
-(require 'rezo-lsp-c)
+
+(setq lsp-auto-guess-root t)
+(setq lsp-enable-indentation nil)
+(setq lsp-prefer-flymake nil)
 
 (provide 'rezo-lsp)
 ;;; rezo-lsp.el ends here
