@@ -1,4 +1,4 @@
-;;; rezo-lsp-js.el --- Emacs Prelude: js-mode configuration.
+;;; rezo-lsp-ts.el --- Emacs Prelude: js-mode configuration.
 ;;
 ;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
@@ -37,19 +37,19 @@
 (require 'lsp-mode)
 (require 'lsp-ui)
 
-(setq js-indent-level 2)
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (setq typescript-indent-level 2)
 
 ;;; Code:
 
-(add-hook 'js-mode-hook #'lsp)
+;; (add-hook 'js-mode-hook #'lsp)
 (add-hook 'rjsx-mode-hook #'lsp)
 (add-hook 'typescript-mode-hook #'lsp)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(add-hook 'js-mode-hook 'flycheck-mode)
+;; (add-hook 'js-mode-hook 'flycheck-mode)
 (add-hook 'rjsx-mode-hook 'flycheck-mode)
 (add-hook 'typescript-mode-hook 'flycheck-mode)
 
-(provide 'rezo-lsp-js)
+(provide 'rezo-lsp-ts)
 
-;;; rezo-lsp-js.el ends here
+;;; rezo-lsp-ts.el ends here
