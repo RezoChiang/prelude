@@ -1,5 +1,7 @@
-(defvar rezo-const-full-date "%Y/%m/%d" "完整日期格式")
-(defvar rezo-const-full-datetime "%Y/%m/%d %H:%M" "完整日期时间格式")
+(setq prelude-theme 'leuven )
+
+(defvar rezo-const-full-date "%Y-%m-%d" "完整日期格式")
+(defvar rezo-const-full-datetime "%Y-%m-%d %H:%M" "完整日期时间格式")
 (defvar rezo-const-short-date "%m.%d" "时间格式")
 
 ;; 用户信息: 注意FreeBSD无法通过getenv获取到当前用户名
@@ -36,8 +38,3 @@
  ((executable-find "aspell")
   (setq ispell-program-name "aspell")
   (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
-
-(defcustom prelude-theme 'leuven
-  "The default color theme, change this in your /personal/preload config."
-  :type 'symbol
-  :group 'prelude)
