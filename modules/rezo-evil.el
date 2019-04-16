@@ -212,6 +212,7 @@
   "x1" 'delete-other-windows
   "x2" 'split-window-below
   "x3" 'split-window-right
+  "x;" 'comment-line
 
   "y" 'easy-kill
   )
