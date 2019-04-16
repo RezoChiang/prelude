@@ -44,7 +44,8 @@
 (setq sml/no-confirm-load-theme t)
 (setq powerline-arrow-shape 'curve)
 (setq powerline-default-separator-dir '(right . left))
-;; For dark theme
+
+;; for dark theme
 ;; (setq sml/theme 'powerline)
 ;; with t can get rid "Loading a theme can run Lisp code. Really load? (y or n) "
 ;; (load-theme 'molokai t)
