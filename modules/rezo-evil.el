@@ -156,7 +156,7 @@
 
   "fb" 'ido-find-file-other-window
   "fd" 'find-name-dired
-  "ff" 'ido-find-file
+  "ff" 'counsel-find-file
   "fp" 'projectile-find-file
   "fr" 'counsel-recentf
   ;; fzf required
