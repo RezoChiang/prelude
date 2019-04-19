@@ -37,6 +37,9 @@
 (require 'lsp-java)
 
 (add-hook 'java-mode-hook #'lsp)
+(add-hook 'java-mode-hook 'flycheck-mode)
+(add-hook 'java-mode-hook 'company-mode)
+
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 4
                                   tab-width 4

@@ -116,7 +116,7 @@
   "<ESC>" 'keyboard-quit
   "1" 'delete-other-windows
   "2" 'winner-undo
-  "3" 'ido-switch-buffer
+  "3" 'counsel-switch-buffer
   "4" 'counsel-M-x
   "0" 'delete-window
   "%" 'evilmi-jump-items
@@ -125,7 +125,7 @@
   "["  'previous-buffer
   "]"  'next-buffer
 
-  "bb" 'ido-switch-buffer
+  "bb" 'counsel-switch-buffer
   "bc" 'clone-indirect-buffer
   "bd" 'ediff-buffers
   "bi" 'ibuffer
@@ -155,9 +155,12 @@
 
 
   "fb" 'ido-find-file-other-window
+  "fd" 'find-name-dired
   "ff" 'ido-find-file
   "fp" 'projectile-find-file
-  "fr" 'recentf-open-files
+  "fr" 'counsel-recentf
+  ;; fzf required
+  "fz" 'counsel-fzf
 
   "cr" 'read-only-mode
   "j" 'avy-goto-char
@@ -176,9 +179,11 @@
   "osb" 'org-schedule
   "ose" 'org-deadline
 
+  "sa" 'counsel-ag
   "sn" 'evil-search-forward
   "so" 'occur
   "sp" 'evil-search-backward
+  "si" 'counsel-imenu
   "ss" 'swiper
 ;;  "ss" 'helm-swoop
 
@@ -190,7 +195,7 @@
   "ws" 'split-window-horizontally
   "wv" 'split-window-vertically
 
-  "xb" 'ido-switch-buffer
+  "xb" 'counsel-switch-buffer
   "xB" 'ibuffer
   "xd" 'dired
   "xf" 'ido-find-file
