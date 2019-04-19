@@ -33,24 +33,33 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(js2-mode json-mode))
+(prelude-require-packages '(js2-mode json-mode ag xref js2-refactor xref-js2 js-doc))
 
 (require 'js2-mode)
+(require 'js2-refactor)
+(require 'xref-js2)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'"    . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-(with-eval-after-load 'js2-mode
-  (defun prelude-js-mode-defaults ()
-    ;; electric-layout-mode doesn't play nice with smartparens
-    (setq-local electric-layout-rules '((?\; . after)))
-    (setq mode-name "JS2")
-    (js2-imenu-extras-mode +1))
+(eval-after-load 'js2-mode
+  '(progn
+     (defun prelude-js-mode-defaults ()
+       ;; electric-layout-mode doesn't play nice with smartparens
+       (setq-local electric-layout-rules '((?\; . after)))
+       ;; 2018/11/27 因为在大文件(2w行+)删除括号时, smartparens会导致卡顿, 所以关闭之
+       (smartparens-mode nil)
+       (setq mode-name "JS2"))
+       ;; 2018/11/27 因为打开和编辑大文件卡顿, 且该功能使用很少, 注释之
+       ;; (js2-imenu-extras-mode +1))
+     (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
 
-  (setq prelude-js-mode-hook 'prelude-js-mode-defaults)
-
-  (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook))))
+     (define-key js2-mode-map (kbd "M-.") nil)
+     (add-hook 'js2-mode-hook (lambda ()
+                                (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+     (add-hook 'js2-mode-hook (lambda () (run-hooks 'prelude-js-mode-hook)))))
 
 (provide 'prelude-js)
 
