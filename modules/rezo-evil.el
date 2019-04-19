@@ -198,7 +198,7 @@
   "xb" 'counsel-switch-buffer
   "xB" 'ibuffer
   "xd" 'dired
-  "xf" 'ido-find-file
+  "xf" 'counsel-find-file
   "xF" 'ido-find-file-other-window
   "xi" 'indent-region
   "xk" 'ido-kill-buffer
