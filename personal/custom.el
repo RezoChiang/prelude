@@ -102,13 +102,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(browse-url-browser-function (quote eww-browse-url))
- '(delete-by-moving-to-trash t)
- '(ediff-split-window-function (quote split-window-horizontally))
- '(lua-indent-level 4)
  '(package-selected-packages
    (quote
-    (lsp-java protobuf-mode typescript-mode rjsx-mode evil-matchit js-doc helm-swoop ag xref-js2 js2-refactor company-tern solarized-theme sunburn-theme dockerfile-mode window-number hydra emms yaml-mode web-mode scss-mode geiser lua-mode yari inf-ruby company-anaconda anaconda-mode json-mode js2-mode gotest go-projectile go-eldoc company-go go-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode evil-numbers evil-visualstar evil-surround evil company counsel swiper ivy smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window))))
+    (oneonone zop-to-char zenburn-theme yaml-mode xref-js2 window-number which-key wgrep web-mode volatile-highlights use-package typescript-mode twilight-theme twilight-bright-theme tiny super-save smex smartrep smartparens smart-mode-line-powerline-theme scss-mode rainbow-mode rainbow-delimiters protobuf-mode projectile php-mode operate-on-number move-text molokai-theme mic-paren magit lua-mode lsp-ui lsp-java keyfreq json-mode js2-refactor js-doc imenu-anywhere iedit ido-completing-read+ hl-todo highlight-parentheses guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck flx-ido expand-region exec-path-from-shell evil-visualstar evil-surround evil-numbers evil-matchit evil-leader editorconfig easy-kill dockerfile-mode discover-my-major diminish diff-hl crux cquery counsel company-lsp browse-kill-ring beacon anzu ag ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
