@@ -1,13 +1,14 @@
-;; (defvar endless/popup-frame-parameters
-;;   '((name . "MINIBUFFER")
-;;     (minibuffer . only))
-;;   "Parameters for the minibuffer popup frame.")
+(defvar endless/popup-frame-parameters
+  '((name . "MINIBUFFER")
+    (minibuffer . only))
+  "Parameters for the minibuffer popup frame.")
 
 ;; (defvar endless/minibuffer-frame
 ;;   (let ((mf (make-frame endless/popup-frame-parameters)))
 ;;     (iconify-frame mf) mf)
 ;;   "Frame holding the extra minibuffer.")
 
+;; open minibuffer window
 ;; (defvar endless/minibuffer-window
 ;;   (car (window-list endless/minibuffer-frame t))
 ;;   "")
