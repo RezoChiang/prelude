@@ -39,6 +39,29 @@
 (prelude-require-package 'smart-mode-line)
 (prelude-require-package 'smart-mode-line-powerline-theme)
 
+;; 设置字体字号, 第二条语句设置daemon模式下的字体
+(defun rezo/better-font()
+(interactive)
+;; english font
+(if (display-graphic-p)
+    (progn
+        (set-face-attribute 'default nil :font (format   "%s:pixelsize=%d" "Inconsolata" 14)) ;; 11 13 17 19 23
+        ;; chinese font
+        (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        (set-fontset-font (frame-parameter nil 'font)
+                            charset
+                            (font-spec :family "Sarasa Mono SC")))) ;; 14 16 20 22 28
+  ))
+
+(defun rezo|init-font(frame)
+(with-selected-frame frame
+    (if (display-graphic-p)
+        (rezo/better-font))))
+
+(if (and (fboundp 'daemonp) (daemonp))
+    (add-hook 'after-make-frame-functions #'rezo|init-font)
+  (rezo/better-font))
+
 (require 'powerline)
 ;; get rid "Loading a theme can run Lisp code. Really load? (y or n) "
 (setq sml/no-confirm-load-theme t)

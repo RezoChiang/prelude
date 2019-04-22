@@ -1,17 +1,12 @@
 ;; 出问题可开, 另外启动时可使用 --debug-init参数
 ;; (setq debug-on-error t)
 
-; 设置字体字号, 第二条语句设置daemon模式下的字体
-(set-frame-font "DejaVu Sans Mono 9")
-(set-face-attribute 'org-table nil :family "Noto Sans CJK SC Light")
-(setq default-frame-alist '((font . "DejaVu Sans Mono 9")))
 
 ;; 新增自定义包
 (prelude-require-packages '(
                             evil-matchit
                             markdown-mode
                             php-mode
-                            ivy
                             rainbow-mode
                             rainbow-delimiters
                             smex
@@ -22,7 +17,6 @@
                             keyfreq
                             tiny
 ;;                            helm-swoop
-                            swiper
                             wgrep
                             iedit
                             ))
@@ -33,7 +27,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
 
 ;; 2018/11/27 垂直分割
-(setq swoop-window-split-direction: 'split-window-vertically)
+;; (setq swoop-window-split-direction: 'split-window-vertically)
 
 ;; 定义编码
 (defvar rezo-coding-default 'utf-8 "默认编码设置")
