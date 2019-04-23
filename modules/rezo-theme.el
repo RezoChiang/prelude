@@ -74,7 +74,7 @@
 ;; (load-theme 'molokai t)
 
 ;; For light theme
-(setq sml/theme 'light-powerline)
+;; (setq sml/theme 'light-powerline)
 ;;(load-theme 'leuven t)
 ;; (load-theme 'solarized-light t)
 (sml/setup)

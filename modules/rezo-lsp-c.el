@@ -33,7 +33,8 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(cquery))
+(prelude-require-packages '(cquery
+                            dap-gdb-lldb))
 (require 'cquery)
 
 ;; setup cquery

@@ -1,4 +1,8 @@
 (setq prelude-theme 'leuven )
+(setq sml/theme 'light-powerline)
+;; for dark theme
+;; (setq prelude-theme 'molokai )
+;; (setq sml/theme 'powerline)
 
 (defvar rezo-const-full-date "%Y-%m-%d" "完整日期格式")
 (defvar rezo-const-full-datetime "%Y-%m-%d %H:%M" "完整日期时间格式")
