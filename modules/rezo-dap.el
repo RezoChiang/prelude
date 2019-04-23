@@ -32,14 +32,9 @@
 
 ;;; Code:
 
-(prelude-require-packages '(dap
-                            dap-ui))
+(prelude-require-packages '(dap-mode))
 
-(require 'dap)
 (require 'dap-ui)
-
-(dap-mode 1)
-(dap-ui-mode 1)
 
 (provide 'rezo-dap)
 ;;; rezo-dap.el ends here

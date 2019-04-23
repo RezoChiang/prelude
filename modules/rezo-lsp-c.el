@@ -33,15 +33,13 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(cquery
-                            dap-gdb-lldb))
-(require 'cquery)
+(prelude-require-packages '(ccls))
+(require 'ccls)
+(require 'dap-gdb-lldb)
 
-;; setup cquery
-(setq cquery-executable "/usr/bin/cquery")
-;;(setq cquery-extra-args '("--log-file=/tmp/cq.log"))
-(setq cquery-cache-dir ".cquery_cached_index")
-(setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack"))
+(dap-mode 1)
+(dap-ui-mode 1)
+(dap-gdb-lldb-setup)
 (setq company-transformers nil company-lsp-async t company-lsp-cache-candidates nil)
 
 ;; set indent
@@ -65,15 +63,28 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
-(defun cquery//enable ()
+(defun ccls//enable ()
   (condition-case nil
       (lsp)
     (user-error nil)))
 
-  (use-package cquery
+  (use-package ccls
     :commands lsp
-    :init (add-hook 'c-mode-hook #'cquery//enable)
-          (add-hook 'c++-mode-hook #'cquery//enable))
+    :init (add-hook 'c-mode-hook #'ccls//enable)
+    (add-hook 'c++-mode-hook #'ccls//enable))
+
+;; (dap-register-debug-provider
+;;  "programming-language-name"
+;;  (lambda (conf)
+;;    (plist-put conf :debugPort 1234) (plist-put conf :host "localhost")
+;;    conf))
+
+;; (dap-register-debug-template "Example Configuration"
+;;                              (list :type "java"
+;;                                    :request "launch"
+;;                                    :args ""
+;;                                    :name "Run Configuration"))
+
 (provide 'rezo-lsp-c)
 
 ;;; rezo-lsp-c.el ends here

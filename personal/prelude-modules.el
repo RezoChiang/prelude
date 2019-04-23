@@ -8,6 +8,7 @@
 (require 'rezo-company)
 (require 'rezo-flycheck)
 (require 'rezo-lsp)
+(require 'rezo-dap)
 
 ;; Emacs IRC client
 ;;(require 'prelude-erc)
