@@ -180,6 +180,7 @@
   "osb" 'org-schedule
   "ose" 'org-deadline
 
+  "sa" 'swiper-all
   "sr" 'counsel-rg
   "sn" 'evil-search-forward
   "so" 'occur
