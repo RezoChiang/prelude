@@ -39,6 +39,9 @@
 (prelude-require-package 'smart-mode-line)
 (prelude-require-package 'smart-mode-line-powerline-theme)
 
+;; ediff 垂直分割
+(setq ediff-split-window-function 'split-window-horizontally)
+
 ;; 设置字体字号, 第二条语句设置daemon模式下的字体
 (defun rezo/better-font()
 (interactive)

@@ -1,6 +1,5 @@
 ;; 出问题可开, 另外启动时可使用 --debug-init参数
-(setq debug-on-error t)
-
+;; (setq debug-on-error t)
 
 ;; 新增自定义包
 (prelude-require-packages '(
