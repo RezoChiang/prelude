@@ -33,10 +33,15 @@
 ;;; Code:
 
 (server-mode)
+(prelude-require-packages '(gnuplot))
 (require 'org-protocol)
 
 ;; org后缀自动启动org-mode
 (add-to-list 'auto-mode-alist '("\\.org\\’" . org-mode))
+
+;; 注册流程图
+(add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
 
 ;; 定义org-agenda读取的文件
 (setq org-agenda-files (list rezo-gtd-leagcy rezo-gtd-inbox))
@@ -50,6 +55,7 @@
  )
 (org-babel-do-load-languages
  'org-babel-load-languages '((C . t)
+                             (gnuplot . t)
                              (java . t)
                              (emacs-lisp . t)
                              (python . t)
