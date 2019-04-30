@@ -164,6 +164,11 @@
   "fz" 'counsel-fzf
 
   "cr" 'read-only-mode
+  "cpp" 'projectile-switch-project
+  "cpd" 'projectile-dired
+  "cpf" 'projectile-find-file
+  "cpF" 'projectile-find-file-in-known-projects
+
   "j" 'avy-goto-char
 
   "kk" 'kill-this-buffer
