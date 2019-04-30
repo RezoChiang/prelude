@@ -164,6 +164,9 @@
   "fz" 'counsel-fzf
 
   "cr" 'read-only-mode
+  "cgb" 'magit-blame
+  "cgd" 'magit-diff
+  "cgl" 'magit-log
   "cpp" 'projectile-switch-project
   "cpd" 'projectile-dired
   "cpf" 'projectile-find-file
