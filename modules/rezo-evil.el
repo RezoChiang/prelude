@@ -190,9 +190,8 @@
 
   "sa" 'swiper-all
   "sr" 'counsel-rg
-  "sn" 'evil-search-forward
   "so" 'occur
-  "sp" 'evil-search-backward
+  "sp" 'counsel-projectile-rg
   "si" 'counsel-imenu
   "ss" 'swiper
 ;;  "ss" 'helm-swoop

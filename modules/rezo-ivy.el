@@ -31,7 +31,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(prelude-require-packages '(ivy swiper counsel))
+(prelude-require-packages '(ivy swiper counsel counsel-projectile))
 
 ;; ivy is a powerful alternative to the popular ido-mode
 
