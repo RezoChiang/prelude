@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: 移动端新页面
+# key: jsp.page
+# --
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<% request.setAttribute("web_name", "${1:页面标题}");  %>
+<%@include file="commons/common.inc"%>
+<%@include file="commons/webconfig.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<c:import url="commons/wap_head_meta.jsp"></c:import>
+<c:import url="commons/jsconfig.jsp"></c:import>
+</head>
+<body>
+<div class="wrap">
+    <c:import url="commons/wap_top_nav.jsp"></c:import>
+
+    <c:import url="commons/wap_bottom_nav.jsp"></c:import>
+    <c:import url="commons/wap_bottom_footer.jsp"></c:import>
+</div>
+</body>
+</html>
