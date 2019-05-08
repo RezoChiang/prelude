@@ -40,7 +40,7 @@
 ;; (require 'prelude-ocaml)
 ;; (require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
 ;; (require 'prelude-perl)
-;; (require 'prelude-python)
+(require 'rezo-lsp-python)
 ;; (require 'prelude-ruby)
 ;; (require 'prelude-lua)
 ;; ;; (require 'prelude-rust)
