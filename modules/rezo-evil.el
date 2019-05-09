@@ -142,16 +142,17 @@
   "efe" 'hs-toggle-hiding
   "efh" 'hs-minor-mode
 
-  "eme" 'emms-start
-  "emE" 'emms-stop
+  "emb" 'emms-previous
   "emf" 'emms-next
-  "emd" 'emms-previous
+  "emi" 'emms-volume-raise
+  "emd" 'emms-volume-lower
   "emp" 'emms-pause
-  "emi" 'emms-show
+  "ems" 'emms-show
+  "emS" 'emms-stop
   "emh" 'emms-shuffle
-  "eml" 'emms-playlist-mode-go
-  "emr" 'emms-toggle-repeat-track
-  "emR" 'emms-toggle-repeat-playlist
+  "emg" 'emms-playlist-mode-go
+  "eml" 'emms-toggle-repeat-track
+  "emL" 'emms-toggle-repeat-playlist
 
 
   "fb" 'ido-find-file-other-window
