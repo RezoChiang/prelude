@@ -61,5 +61,5 @@
 ;;(require 'rezo-lsp-js)
 ;; (require 'rezochiang-god-mode)
 ;; (require 'rezochiang-oxpublish)
-;; (require 'rezochiang-emms)
+(require 'rezochiang-emms)
 ;;; prelude-modules.el ends here

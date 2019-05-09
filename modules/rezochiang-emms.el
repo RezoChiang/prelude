@@ -37,6 +37,7 @@
 (require 'emms-source-playlist)
 (require 'emms-player-mplayer)
 
+(append emms-player-mplayer-parameters (list "-novideo"))
 (setq emms-player-list '(emms-player-mplayer))
 (setq emms-source-file-default-directory rezo-emms-dir)
 (setq emms-playlist-buffer-name "*emms-playlist")

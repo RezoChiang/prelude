@@ -35,8 +35,19 @@
 (prelude-require-packages '(plantuml-mode flycheck-plantuml))
 (require 'plantuml-mode)
 (require 'flycheck-plantuml)
-(setq plantuml-jar-path (expand-file-name "~/.local/bin/plantuml.jar"))
 (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+
+(setq plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
+(setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
+
+(with-eval-after-load 'org
+(org-babel-do-load-languages 'org-babel-load-languages '((ruby . t)
+(plantuml . t)
+)))
+;; 注册流程图
+(add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
+
 
 (flycheck-plantuml-setup)
 
