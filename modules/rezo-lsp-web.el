@@ -32,8 +32,8 @@
 
 ;;; Code:
 
-(prelude-require-packages '(lsp-html web-mode))
-
+(prelude-require-packages '(web-mode))
+(require 'lsp-mode)
 (require 'web-mode)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))

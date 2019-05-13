@@ -32,7 +32,7 @@
 
 ;;; Code:
 
-(prelude-require-packages '(lsp-css scss-mode))
+(prelude-require-packages '(scss-mode))
 (require 'lsp-mode)
 (require 'lsp-ui)
 
