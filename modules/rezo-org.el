@@ -42,6 +42,11 @@
 ;; 定义org-agenda读取的文件
 (setq org-agenda-files (list rezo-gtd-leagcy rezo-gtd-inbox))
 
+;; for maxima
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((maxima . t)))
+
 ;; org-babel 相关设定
 (setq-default
  org-babel-C-compiler "clang"

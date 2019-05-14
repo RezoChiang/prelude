@@ -1,6 +1,6 @@
 ;;; Uncomment the modules you'd like to use and restart Prelude afterwards
 
-(require 'rezo-usepackage)
+;; (require 'rezo-usepackage)
 (require 'rezo-theme)
 (require 'rezo-windownumber)
 (require 'rezo-evil)
@@ -59,7 +59,6 @@
 (require 'rezo-lsp-java)
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
-;; (require 'rezochiang-god-mode)
 ;; (require 'rezochiang-oxpublish)
 (require 'rezochiang-emms)
 ;;; prelude-modules.el ends here

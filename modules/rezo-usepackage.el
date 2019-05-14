@@ -1,4 +1,4 @@
-;;; rezo-usepackage.el --- configure god-mode.
+;;; rezo-usepackage.el --- configure usepackage.
 ;;
 ;; Copyright © 2011-2017 Rezo.Chiang.
 ;;
@@ -11,7 +11,7 @@
 
 ;;; Commentary:
 
-;; define some function for god-mode
+;; define some function for usepackage
 
 ;;; License:
 
