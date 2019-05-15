@@ -46,7 +46,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((maxima . t)))
-
+(visual-line-mode t)
 ;; org-babel 相关设定
 (setq-default
  org-babel-C-compiler "clang"
