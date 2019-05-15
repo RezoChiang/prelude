@@ -216,9 +216,7 @@
   "xnd" 'narrow-to-defun
   "xne" 'org-narrow-to-element
   "xnw" 'widen
-  "xrr" 'point-to-register
-  "xrj" 'jump-to-register
-  "xri" 'insert-register
+  "xr" 'read-only-mode
   "xs" 'save-buffer
   "xu" 'undo-tree-visualize
   "xw" 'write-file
