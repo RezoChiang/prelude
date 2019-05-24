@@ -1,9 +1,9 @@
-;;; rezochiang-emms.el --- emms setup.
+;;; rezo-emms.el --- emms setup.
 ;;
 ;; Copyright © 2011-2017 Rezo.Chiang.
 ;;
 ;; Author: Rezo.Chiang <rezo@live.cn>
-;; URL: https://github.com/RezoChiang/prelude
+;; URL: https://github.com/Rezo/prelude
 ;; Version: 1.0.0
 ;; Keywords: convenience
 
@@ -43,6 +43,6 @@
 (setq emms-playlist-buffer-name "*emms-playlist")
 (emms-add-directory-tree rezo-emms-dir)
 
-(provide 'rezochiang-emms)
+(provide 'rezo-emms)
 
-;;; rezochiang-emms.el ends here
+;;; rezo-emms.el ends here

@@ -59,6 +59,6 @@
 (require 'rezo-lsp-java)
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
-(require 'rezochiang-oxpublish)
-(require 'rezochiang-emms)
+(require 'rezo-oxpublish)
+(require 'rezo-emms)
 ;;; prelude-modules.el ends here

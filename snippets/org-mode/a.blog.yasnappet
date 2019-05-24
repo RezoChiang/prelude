@@ -1,0 +1,10 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: 静态博客文章模板
+# key: a.blog
+# contributor: Rezo.Chiang
+# --
+#+TITLE: $1 - Hello, 42
+#+DESCRIPTION: 有关开始, 过程, 和结束的零散碎片; 问题与答案的混合;
+#+KEYWORDS:朝花燃尽
+#+DATE: <`(format-time-string "%Y-%m-%d %H:%m" (current-time))`>
+#+OPTIONS: html-style:nil
