@@ -23,11 +23,6 @@
 (defvar rezo-gtd-inbox (expand-file-name "inbox.org" rezo-gtd-dir) "GDT杂项文件存放路径" )
 (defvar rezo-gtd-leagcy (expand-file-name "leagcy.org" rezo-gtd-dir) "GDT上一版文件汇总" )
 
-(defvar rezo-blog-dir (expand-file-name "blog" rezo-dir-default) "blog根目录" )
-(defvar rezo-blog-source-dir (expand-file-name "source/" rezo-blog-dir) "org文件存放目录" )
-(defvar rezo-blog-publish-dir (expand-file-name "publish/" rezo-blog-dir) "html发布目标目录" )
-(defvar rezo-blog-theme-dir (expand-file-name "themes" rezo-blog-dir) "主题目录" )
-(defvar rezo-blog-theme "even" "主题名,须作为目录存在于主题目录" )
 
 ;; For Flyspell and Ispell
 (ispell-change-dictionary "american" t)

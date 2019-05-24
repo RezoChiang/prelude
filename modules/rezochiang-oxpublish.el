@@ -37,15 +37,15 @@
 (setq org-publish-project-alist
       '(
         ("blog"
-         :base-directory 'rezo-blog-source-dir
+         :base-directory "/data/blog/source/"
          :base-extension "org"
-         :publishing-directory rezo-blog-publish-dir
+         :publishing-directory "/data/blog/publish/"
          :recursive t
          :publishing-function org-html-publish-to-html
          :headline-levels 4             ; Just the default for this project.
          :auto-preamble t
-         :author rezo-name-full
-         :email rezo-email-address
+         :author "Rezo.Chiang"
+         :email "rezo AT live.cn"
          )
         ))
 (defun publish-project (project no-cache)
