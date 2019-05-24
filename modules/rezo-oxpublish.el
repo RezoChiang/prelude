@@ -60,11 +60,12 @@
          :with-author nil       ; Disable the inclusion of "Author: Your Name" in the postamble.
          :publishing-function org-html-publish-to-html
          :headline-levels 1             ; Just the default for this project.
-         :auto-preamble t;         ; Enable auto preamble
-         :auto-postamble t         ; Enable auto postamble
+         :auto-preamble nil          ; Enable auto preamble
+         :auto-postamble nil         ; Enable auto postamble
          :table-of-contents t        ; Set this to "t" if you want a table of contents, set to "nil" disables TOC.
-         :toc-levels 2               ; Just the default for this project.
-         :section-numbers nil        ; Set this to "t" if you want headings to have n
+         :toc-levels 4               ; Just the default for this project.
+         :headline-levels 5
+         :section-numbers t        ; Set this to "t" if you want headings to have n
          :html-head "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no\" />\n<meta name=\"apple-touch-fullscreen\" content=\"yes\"/>\n<meta name=\"apple-mobile-web-app-capable\" content=\"yes\"/>\n<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\"/>\n<meta name=\"format-detection\" content=\"telephone=no,email=no\"/>\n<meta name=\"x5-fullscreen\" content=\"true\"/>\n<meta name=\"screen-orientation\" content=\"portrait\"/>\n<meta name=\"browsermode\" content=\"application\"/>\n<meta name=\"x5-orientation\" content=\"portrait\"/>\n<meta name=\"x5-page-mode\" content=\"app\"/>\n<meta name=\"mobile-web-app-capable\" content=\"yes\"/>\n<link href=\"https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\"/>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/all.css\" />\n<script src=\"https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js\"></script>\n<script src=\"https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>\n<script src=\"/assets/js/all.js\"></script>\n"
          :html-link-home "index.html"
          :html-link-up "index.html"
@@ -85,7 +86,7 @@
   (org-publish-project project)
   (setq org-publish-use-timestamps-flag t))
 
-(defun publish-project ()
+(defun publish-blog()
   (org-publish-project "blog")
   )
 
