@@ -166,6 +166,7 @@
 
   "cr" 'read-only-mode
   "cgb" 'magit-blame
+  "cgm" 'smerge-diff
   "cgd" 'magit-diff
   "cgl" 'magit-log
   "cpp" 'projectile-switch-project
