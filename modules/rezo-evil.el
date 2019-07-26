@@ -168,7 +168,7 @@
   "cgb" 'magit-blame
   "cgm" 'smerge-diff
   "cgd" 'magit-diff
-  "cgl" 'magit-log
+  "cgl" 'magit-log-buffer-file
   "cpp" 'projectile-switch-project
   "cpd" 'projectile-dired
   "cpf" 'projectile-find-file
