@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 下载转换m3u8
+# key: c.d.m3u8
+# --
+ffmpeg -i "${1:url.m3u8}" -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 ${2:filename}.mp4
