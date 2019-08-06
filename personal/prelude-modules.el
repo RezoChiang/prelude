@@ -32,6 +32,7 @@
 ;;(require 'prelude-go)
 ;; (require 'prelude-haskell)
 ;; (require 'prelude-js)
+(require 'rezo-nginx)
 (require 'rezo-plantuml)
 ;; (require 'rezo-js)
 (require 'rezo-lsp-js)
