@@ -68,11 +68,8 @@
       (lsp)
     (user-error nil)))
 
-  (use-package ccls
-    :commands lsp
-    :init (add-hook 'c-mode-hook #'ccls//enable)
-    (add-hook 'c++-mode-hook #'ccls//enable))
-
+(add-hook 'c-mode-hook #'ccls//enable)
+(add-hook 'c++-mode-hook #'ccls//enable)
 ;; (dap-register-debug-provider
 ;;  "programming-language-name"
 ;;  (lambda (conf)

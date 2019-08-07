@@ -169,6 +169,7 @@
   "cgm" 'smerge-diff
   "cgd" 'magit-diff
   "cgl" 'magit-log-buffer-file
+  "cgt" 'git-timemachine
   "cpp" 'projectile-switch-project
   "cpd" 'projectile-dired
   "cpf" 'projectile-find-file
