@@ -58,6 +58,7 @@
 ;; (require 'prelude-yaml)
 ;;(require 'rezochiang-hydra)
 (require 'rezo-lsp-c)
+(require 'rezo-lsp-go)
 (require 'rezo-lsp-php)
 (require 'rezo-lsp-java)
 ;; (require 'oneonone)
