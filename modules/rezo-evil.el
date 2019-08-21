@@ -165,15 +165,23 @@
   "fz" 'counsel-fzf
 
   "cr" 'read-only-mode
+
+  ;; for git operations
   "cgb" 'magit-blame
-  "cgm" 'smerge-diff
   "cgd" 'magit-diff
   "cgl" 'magit-log-buffer-file
   "cgt" 'git-timemachine
+
+  ;; for for projectile
   "cpp" 'projectile-switch-project
   "cpd" 'projectile-dired
   "cpf" 'projectile-find-file
   "cpF" 'projectile-find-file-in-known-projects
+
+  ;; for lsp mode
+  "cla" 'lsp-ui-sideline-apply-code-actions
+  "clg" 'lsp-goto-implementation
+  "clG" 'lsp-goto-type-definition
 
   "j" 'avy-goto-char
 
@@ -197,7 +205,7 @@
   "sp" 'counsel-projectile-rg
   "si" 'counsel-imenu
   "ss" 'swiper
-;;  "ss" 'helm-swoop
+  ;;  "ss" 'helm-swoop
 
   "wd" 'delete-window
   "ww" 'other-window
