@@ -180,10 +180,11 @@
 
   ;; for lsp mode
   "cla" 'lsp-ui-sideline-apply-code-actions
-  "clg" 'lsp-goto-implementation
-  "clG" 'lsp-goto-type-definition
+  "clf" 'lsp-find-definition
+  "clF" 'lsp-find-implementation
 
   "j" 'avy-goto-char
+  "g" 'lsp-find-definition
 
   "kk" 'kill-this-buffer
 
