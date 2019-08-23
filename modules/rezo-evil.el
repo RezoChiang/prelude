@@ -114,10 +114,12 @@
 (evil-leader/set-key
   "<SPC>" 'keyboard-quit
   "<ESC>" 'keyboard-quit
-  "1" 'delete-other-windows
-  "2" 'winner-undo
+  "1" 'lsp-execute-code-action
+  "2" 'lsp-find-definition
   "3" 'counsel-switch-buffer
   "4" 'counsel-M-x
+  "8" 'winner-undo
+  "9" 'delete-other-windows
   "0" 'delete-window
   "%" 'evilmi-jump-items
   "-" 'hs-hide-level
