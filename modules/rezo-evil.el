@@ -114,12 +114,11 @@
 (evil-leader/set-key
   "<SPC>" 'keyboard-quit
   "<ESC>" 'keyboard-quit
-  "1" 'lsp-execute-code-action
-  "2" 'lsp-find-definition
+  "1" 'delete-other-windows
+  "2" 'winner-undo
   "3" 'counsel-switch-buffer
   "4" 'counsel-M-x
-  "8" 'winner-undo
-  "9" 'delete-other-windows
+  "5" 'lsp-execute-code-action
   "0" 'delete-window
   "%" 'evilmi-jump-items
   "-" 'hs-hide-level
@@ -136,7 +135,7 @@
   "bp" 'previous-buffer
 
   "eei" 'indent-region
-  "eee" 'mc/edit-lines
+  "eee" 'iedit-mode
   "eep" 'pop-global-mark
   "eem" 'mc/mark-all-like-this
   "edf" 'ediff
