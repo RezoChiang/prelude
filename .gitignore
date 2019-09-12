@@ -27,6 +27,7 @@ network-security.data
 prelude-cheatsheet.el
 prelude-cheatsheet.aux
 prelude-cheatsheet.log
+smex-items
 emms/
 ido.last
 bookmarks
