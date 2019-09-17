@@ -181,8 +181,10 @@
 
   ;; for lsp mode
   "cla" 'lsp-ui-sideline-apply-code-actions
-  "clf" 'lsp-find-definition
-  "clF" 'lsp-find-implementation
+  "cld" 'lsp-find-definition
+  "clD" 'lsp-find-declaration
+  "cli" 'lsp-find-implementation
+  "clr" 'lsp-find-references
 
   "j" 'avy-goto-char
   "g" 'lsp-find-definition
