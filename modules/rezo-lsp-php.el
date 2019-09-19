@@ -36,7 +36,8 @@
 (prelude-require-packages '(lsp-php php-mode))
 (require 'lsp-mode)
 (require 'lsp-ui)
-
+(require 'dap-php)
+(dap-php-setup)
 (setq lsp-clients-php-iph-server-command '("intelephense" "--stdio"))
 (lsp-register-client
  (make-lsp-client :new-connection (lsp-stdio-connection lsp-clients-php-iph-server-command)
