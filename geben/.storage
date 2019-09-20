@@ -1,3 +1,9 @@
-((:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/api.php" :source
-         ("file:///work/chatroom/api.php" "file:///work/chatroom/include/common.inc.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php")
+((:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/ajax.php" :source
+         ("file:///work/chatroom/ajax.php" "file:///work/chatroom/include/global.func.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/ajax.php")
+         ...)
+ (:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/index.php" :source
+         ("file:///work/chatroom/index.php")
+         ...)
+ (:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/api.php" :source
+         ("file:///work/chatroom/api.php" "file:///work/chatroom/include/common.inc.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/api.php" ...)
          ...))
