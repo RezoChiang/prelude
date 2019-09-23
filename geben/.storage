@@ -1,9 +1,12 @@
-((:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/ajax.php" :source
+((:proxy nil :port 9000 :language :php :fileuri "file:///work/ptcms/index.php" :source
+         ("file:///work/ptcms/index.php" "file:///work/ptcms/ptcms/ptcms.php" "file:///work/ptcms/ptcms/function.php" "file:///work/ptcms/ptcms/core/base.php" "file:///work/ptcms/ptcms/core/pt.php" "file:///work/ptcms/index.php" "file:///work/ptcms/ptcms/ptcms.php" "file:///work/ptcms/ptcms/core/pt.php" "file:///work/ptcms/ptcms/core/plugin.php" "file:///work/ptcms/ptcms/core/config.php" ...)
+         ...)
+ (:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/ajax.php" :source
          ("file:///work/chatroom/ajax.php" "file:///work/chatroom/include/global.func.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/ajax.php")
-         \.\.\.)
+         ...)
  (:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/index.php" :source
          ("file:///work/chatroom/index.php")
-         \.\.\.)
+         ...)
  (:proxy nil :port 9000 :language :php :fileuri "file:///work/chatroom/api.php" :source
-         ("file:///work/chatroom/api.php" "file:///work/chatroom/include/common.inc.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/api.php" \.\.\. "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/include/db_mysql.class.php")
-         \.\.\.))
+         ("file:///work/chatroom/api.php" "file:///work/chatroom/include/common.inc.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/api.php" "file:///work/chatroom/include/db_mysql.class.php" "file:///work/chatroom/api.php" ...)
+         ...))
