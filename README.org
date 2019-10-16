@@ -1,0 +1,12 @@
+This configure clone from [[https://github.com/bbatsov/prelude][prelude's enhanced emacs distribution]]. 
+very appreciate his excellent works!
+I just clone and do some little configure for my personal GNU Emacs 25.2.1.
+
+* Known Issues:
+- [X] [2017-11-14] js2-mode is slow or stuck when open large file more than 10000 lines.
+  - replace js2-mode with js3-mode(though js3-mode MAYBE still using js2-mode?) 
+- [X] [2017-10-09] font size configure nonfunctional with daemon.
+- [ ] [2017-10-09] daemon will crash when enable prelude-evil module.
+- [ ] [2017-10-09] Flyspell Error: No word lists can be found for the language "zh_CN"
+- [X] [2017-10-09] +daemon-client seems slower than normal mode?+ All mode are slow when I open one js file.
+  - The problem was disappeared when I disabled the projectile minor mode.

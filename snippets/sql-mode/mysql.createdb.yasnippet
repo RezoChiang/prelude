@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name:mysql新建数据库
+# key: mysql.createdb
+# --
+CREATE DATABASE ${1:dbname} DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+create user '${2:user}'@'%' identified by '${3:password}';
+grant all on $1.* to $2@'%' identified by '$3';
+GRANT GRANT OPTION ON $1.* TO '$2@'@'%';
+FLUSH PRIVILEGES;
+use $1;

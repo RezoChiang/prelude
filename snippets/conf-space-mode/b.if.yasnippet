@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: if
+# key: b.if
+# --
+if ${1:[ ${2:-f $file} ]}; then
+   ${3:echo "do some job"}
+fi
