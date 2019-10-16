@@ -173,6 +173,7 @@
   "cgd" 'magit-diff
   "cgl" 'magit-log-buffer-file
   "cgt" 'git-timemachine
+  "cgm" 'emerge-ediff
 
   ;; for for projectile
   "cpp" 'projectile-switch-project

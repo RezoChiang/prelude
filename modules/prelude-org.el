@@ -33,12 +33,10 @@
 ;;; Code:
 
 (add-to-list 'auto-mode-alist '("\\.org\\’" . org-mode))
-(setq-default
- org-babel-C-compiler "clang"
- org-babel-C++-compiler "clang++"
- org-log-done 'time
- org-log-done 'note
-)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(setq org-log-done t)
 
 (defun prelude-org-mode-defaults ()
   (let ((oldmap (cdr (assoc 'prelude-mode minor-mode-map-alist)))
@@ -49,23 +47,11 @@
     (define-key newmap (kbd "C-a") nil)
     (make-local-variable 'minor-mode-overriding-map-alist)
     (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist))
-  )
+)
 
 (setq prelude-org-mode-hook 'prelude-org-mode-defaults)
 
 (add-hook 'org-mode-hook (lambda () (run-hooks 'prelude-org-mode-hook)))
-(org-babel-do-load-languages
- 'org-babel-load-languages '((C . t)
-                             (java . t)
-                             (emacs-lisp . t)
-                             (python . t)
-                             (ruby . t)
-                             (perl . t)
-                             (js . t)
-                             (shell . t)
-                             (sql . t)
-                             (lua . t)
-                             ))
 
 (provide 'prelude-org)
 
