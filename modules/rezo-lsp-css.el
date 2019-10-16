@@ -31,32 +31,26 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-
-(prelude-require-packages '(scss-mode))
+(prelude-require-packages '(scss-mode rainbow-mode))
 (require 'lsp-mode)
 (require 'lsp-ui)
 
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(setq css-indent-offset 2)
 
 ;; mode启动后需要一些配置
-(eval-after-load 'css-mode
-  '(progn
-     (prelude-require-packages '(rainbow-mode))
+(with-eval-after-load 'css-mode
+  (defun rezo-lsp-css-mode-defaults ()
+    (rainbow-mode +1)
+    (run-hooks 'prelude-prog-mode-hook))
 
-     (setq css-indent-offset 2)
+  (setq rezo-lsp-css-mode-hook 'rezo-lsp-css-mode-defaults)
 
-     (defun prelude-css-mode-defaults ()
-       (rainbow-mode +1)
-       (run-hooks 'prelude-prog-mode-hook))
-
-     (setq prelude-css-mode-hook 'prelude-css-mode-defaults)
-
-     (add-hook 'css-mode-hook (lambda ()
-                                (run-hooks 'prelude-css-mode-hook)))))
-
-(add-hook 'css-mode-hook #'lsp)
-(add-hook 'css-mode-hook 'lsp-ui-mode)
-(add-hook 'css-mode-hook 'flycheck-mode)
+  (add-hook 'css-mode-hook #'lsp)
+  (add-hook 'css-mode-hook 'lsp-ui-mode)
+  (add-hook 'css-mode-hook 'flycheck-mode)
+  (add-hook 'css-mode-hook (lambda ()
+                             (run-hooks 'rezo-lsp-css-mode-hook))))
 
 ;; turn off annoying auto-compile on save
 (setq scss-compile-at-save nil)
