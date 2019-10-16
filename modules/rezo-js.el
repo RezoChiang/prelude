@@ -43,23 +43,20 @@
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-(eval-after-load 'js2-mode
-  '(progn
-     (defun rezo-js-mode-defaults ()
-       ;; electric-layout-mode doesn't play nice with smartparens
-       (setq-local electric-layout-rules '((?\; . after)))
-       ;; 2018/11/27 因为在大文件(2w行+)删除括号时, smartparens会导致卡顿, 所以关闭之
-       (smartparens-mode nil)
-       (setq mode-name "JS2"))
-       ;; 2018/11/27 因为打开和编辑大文件卡顿, 且该功能使用很少, 注释之
-       ;; (js2-imenu-extras-mode +1))
-     (setq prelude-js-mode-hook 'rezo-js-mode-defaults)
+(with-eval-after-load 'js2-mode
+  (defun rezo-js-mode-defaults ()
+    ;; electric-layout-mode doesn't play nice with smartparens
+    (setq-local electric-layout-rules '((?\; . after)))
+    ;; 2018/11/27 因为在大文件(2w行+)删除括号时, smartparens会导致卡顿, 所以关闭之
+    (smartparens-mode nil)
+    ;; 2018/11/27 因为打开和编辑大文件卡顿, 且该功能使用很少, 注释之
+    ;; (js2-imenu-extras-mode +1))
+    (setq mode-name "JS2"))
 
-     (define-key js2-mode-map (kbd "M-.") nil)
-     (add-hook 'js2-mode-hook (lambda ()
-                                (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-     (add-hook 'js2-mode-hook #'js2-refactor-mode)
-     (add-hook 'js2-mode-hook (lambda () (run-hooks 'rezo-js-mode-hook)))))
+  (setq rezo-js-mode-hook 'rezo-js-mode-defaults)
+
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (add-hook 'js2-mode-hook (lambda () (run-hooks 'rezo-js-mode-hook))))
 
 (provide 'rezo-js)
 
