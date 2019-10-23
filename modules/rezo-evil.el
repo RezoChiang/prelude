@@ -37,9 +37,11 @@
 ;;; evil-numbers enables vim style numeric incrementing and decrementing
 ;;; evil-leader lets you use leaderkey space like spacemacs;
 
-(prelude-require-packages '(evil goto-chg evil-surround evil-visualstar evil-numbers evil-leader))
+(prelude-require-packages '(evil goto-chg evil-surround evil-visualstar evil-numbers evil-leader evil-ediff evil-magit))
 
 (require 'evil-visualstar)
+(require 'evil-ediff)
+(require 'evil-magit)
 
 (setq evil-mode-line-format 'before)
 
@@ -173,7 +175,7 @@
   "cgd" 'magit-diff
   "cgl" 'magit-log-buffer-file
   "cgt" 'git-timemachine
-  "cgm" 'emerge-ediff
+  "cgm" 'smerge-ediff
 
   ;; for for projectile
   "cpp" 'projectile-switch-project
