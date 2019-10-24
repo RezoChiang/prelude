@@ -1,6 +1,6 @@
 ;;; Uncomment the modules you'd like to use and restart Prelude afterwards
 
-;; (require 'rezo-usepackage)
+(require 'rezo-usepackage)
 (require 'rezo-theme)
 (require 'rezo-windownumber)
 (require 'rezo-evil)
@@ -61,6 +61,7 @@
 (require 'rezo-lsp-go)
 (require 'rezo-lsp-php)
 (require 'rezo-lsp-java)
+(require 'rezo-lsp-lua)
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
 (require 'rezo-oxpublish)
