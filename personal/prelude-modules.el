@@ -42,7 +42,8 @@
 ;; (require 'prelude-ocaml)
 ;; (require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
 ;; (require 'prelude-perl)
-(require 'rezo-lsp-python)
+;; FIXME 2019-10-27 python配置失效
+;; (require 'rezo-lsp-python)
 ;; (require 'prelude-ruby)
 ;; (require 'prelude-lua)
 ;; ;; (require 'prelude-rust)
@@ -59,11 +60,12 @@
 ;;(require 'rezochiang-hydra)
 (require 'rezo-lsp-c)
 (require 'rezo-lsp-go)
-(require 'rezo-lsp-php)
+;; FIXME 2019-10-27 php配置失效
+;; (require 'rezo-lsp-php)
 (require 'rezo-lsp-java)
 (require 'rezo-lsp-lua)
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
 (require 'rezo-oxpublish)
-(require 'rezo-emms)
+;; (require 'rezo-emms)
 ;;; prelude-modules.el ends here
