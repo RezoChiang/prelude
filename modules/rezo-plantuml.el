@@ -30,20 +30,21 @@
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
+;; 2019-11-5 brew install plantuml
 ;;; Code:
 (require 'prelude-programming)
 (prelude-require-packages '(plantuml-mode flycheck-plantuml))
 (require 'plantuml-mode)
 (require 'flycheck-plantuml)
-(add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
 
-(setq plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
-(setq org-plantuml-jar-path (expand-file-name "/usr/share/java/plantuml/plantuml.jar"))
+(setq plantuml-jar-path (expand-file-name "~/.emacs.d/plantuml.jar"))
+(setq org-plantuml-jar-path (expand-file-name "~/.emacs.d/plantuml.jar"))
 
-(with-eval-after-load 'org
-(org-babel-do-load-languages 'org-babel-load-languages '((ruby . t)
-(plantuml . t)
-)))
+;; 注册流程图
+(add-to-list
+ 'plantuml-executable-args '("plantuml" . plantuml))
+
 ;; 注册流程图
 (add-to-list
   'org-src-lang-modes '("plantuml" . plantuml))

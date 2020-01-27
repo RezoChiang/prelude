@@ -57,6 +57,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages '((C . t)
                              (gnuplot . t)
+                             (plantuml . t)
                              (java . t)
                              (emacs-lisp . t)
                              (python . t)
