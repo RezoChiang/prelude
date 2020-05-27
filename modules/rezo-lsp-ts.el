@@ -33,21 +33,24 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(typescript-mode json-mode))
+(prelude-require-packages '(typescript-mode))
 (require 'lsp-mode)
 (require 'lsp-ui)
-
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(lsp-register-client
+ (make-lsp-client :new-connection (lsp-stdio-connection "typescript-language-server --stdio")
+                  :major-modes '(typescript-mode)
+                  :server-id 'typescript-language-server))
+
 (setq typescript-indent-level 2)
+(flycheck-add-mode 'typescript-tslint 'typescript-mode)
 
 ;;; Code:
-
-;; (add-hook 'js-mode-hook #'lsp)
-(add-hook 'rjsx-mode-hook #'lsp)
-(add-hook 'typescript-mode-hook #'lsp)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-;; (add-hook 'js-mode-hook 'flycheck-mode)
+(add-hook 'rjsx-mode-hook #'lsp)
 (add-hook 'rjsx-mode-hook 'flycheck-mode)
+(add-hook 'typescript-mode-hook #'lsp)
 (add-hook 'typescript-mode-hook 'flycheck-mode)
 
 (provide 'rezo-lsp-ts)

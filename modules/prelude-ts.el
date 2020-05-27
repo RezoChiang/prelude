@@ -54,6 +54,7 @@
 
   (add-hook 'typescript-mode-hook (lambda () (run-hooks 'prelude-ts-mode-hook))))
 
+(setq typescript-indent-level 2)
 (provide 'prelude-ts)
 
 ;;; prelude-ts.el ends here

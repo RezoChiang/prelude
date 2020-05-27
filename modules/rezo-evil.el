@@ -207,7 +207,12 @@
   "osb" 'org-schedule
   "ose" 'org-deadline
 
+  "rr" 'anzu-query-replace-at-cursor
+  "rs" 'anzu-query-replace
+  "ra" 'anzu-query-replace-regexp
+
   "sa" 'swiper-all
+  "sc" 'swiper-thing-at-point
   "sr" 'counsel-rg
   "so" 'occur
   "sp" 'counsel-projectile-rg

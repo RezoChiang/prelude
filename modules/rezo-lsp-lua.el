@@ -1,4 +1,4 @@
-;;; rezo-lsp-lua.el --- Emacs Prelude: cc-mode configuration.
+;;; rezo-lsp-lua.el --- Emacs Prelude: lua-mode configuration.
 ;; https://github.com/emacs-lsp/lsp-mode/wiki/Install-EmmyLua-Language-server
 ;;
 ;; Copyright © 2011-2018 Bozhidar Batsov

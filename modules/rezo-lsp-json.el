@@ -1,4 +1,4 @@
-;;; rezo-lsp-js.el --- Emacs Prelude: js-mode configuration.
+;;; rezo-lsp-json.el --- Emacs Prelude: js-mode configuration.
 ;;
 ;; Copyright © 2011-2018 Bozhidar Batsov
 ;;
@@ -33,29 +33,25 @@
 ;;; Code:
 
 (require 'prelude-programming)
-(prelude-require-packages '(js2-mode))
+(prelude-require-packages '(json-mode))
 (require 'lsp-mode)
 (require 'lsp-ui)
-
-(add-to-list 'auto-mode-alist '("\\.js\\'"    . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'"    . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-;; (lsp-register-client
-;;  (make-lsp-client :new-connection (lsp-stdio-connection "javascript-typescript-stdio")
-;;                   :major-modes '(js2-mode)
-;;                   :server-id 'javascript-typescript-stdio))
-;; (setq typescript-indent-level 2)
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
+;; (with-eval-after-load 'json-mode
+;;   (defun rezo-json-mode-defaults ()
+;;     (interactive)
+;;     (tide-setup)
+;;     (flycheck-mode +1)
+;;     )
+;;   (setq rezo-json-mode-hook 'rezo-json-mode-defaults)
+;;   (add-hook 'json-mode-hook (lambda () (run-hooks 'rezo-json-mode-hook))))
+(setq js-indent-level 2)
 
 ;;; Code:
-
-;; (add-hook 'js-mode-hook #'lsp)
-(add-hook 'rjsx-mode-hook #'lsp)
-(add-hook 'js2-mode-hook #'lsp)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(add-hook 'rjsx-mode-hook 'flycheck-mode)
-(add-hook 'typescript-mode-hook 'flycheck-mode)
+(add-hook 'json-mode-hook #'lsp)
+(add-hook 'json-mode-hook 'flycheck-mode)
 
-(provide 'rezo-lsp-js)
+(provide 'rezo-lsp-json)
 
-;;; rezo-lsp-js.el ends here
+;;; rezo-lsp-json.el ends here
