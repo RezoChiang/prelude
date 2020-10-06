@@ -38,6 +38,7 @@
 (require 'lsp-ui)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'"    . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'"    . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'"    . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
@@ -48,7 +49,7 @@
 ;; (setq typescript-indent-level 2)
 
 ;;; Code:
-
+(setq js2-strict-missing-semi-warning nil)
 ;; (add-hook 'js-mode-hook #'lsp)
 (add-hook 'rjsx-mode-hook #'lsp)
 (add-hook 'js2-mode-hook #'lsp)

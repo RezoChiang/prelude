@@ -47,6 +47,14 @@
 (add-to-list 'auto-mode-alist
 '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . web-mode))
 
+(setq web-mode-script-padding 4)
+(setq web-mode-style-padding 4)
+(setq web-mode-block-padding 4)
+(setq web-mode-engines-alist '(("js" . "\\.html\\'")
+                               ("css" . "\\.html\\'")
+                               ))
+
+(add-hook 'web-mode-hook #'(lambda () (yas-activate-extra-mode 'js-mode)))
 ;; make web-mode play nice with smartparens
 (setq web-mode-enable-auto-pairing nil)
 
