@@ -64,7 +64,7 @@
 ;; FIXME 2019-10-27 php配置失效
 ;; (require 'rezo-lsp-php)
 ;; (require 'rezo-lsp-java)
-(require 'rezo-lsp-lua)
+;; (require 'rezo-lsp-lua)
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
 ;; (require 'rezo-oxpublish)

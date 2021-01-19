@@ -75,21 +75,6 @@
   ;; 取消自动备份
  make-backup-files nil)
 
-(defun rezo-org-capture-tpl-term()
-  (concat "* " (format-time-string "%Y-%m-%d" (current-time)) " %?")
-  )
-
-(defun rezo-org-capture-tpl-note()
-  (concat "** [" (format-time-string "%H:%M" (current-time)) "] %^{keywords, cause or purpose}\t%^g\n%?")
-  )
-
-(defun rezo-org-capture-tpl-plain()
-  (concat "** [" (format-time-string "%H:%M" (current-time)) "] %?\t:未归类:")
-  )
-
-;; 定义org-agenda读取的文件
-(setq org-agenda-files (list rezo-gtd-leagcy rezo-gtd-inbox))
-
 ;; 设置回收站目录, 要与 delete-by-moving-to-trash 配合使用
 (setq trash-directory "~/Trash")
 
@@ -98,12 +83,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(emms-player-mplayer-parameters '("-slave" "-quiet" "-really-quiet" "-novideo"))
- '(org-agenda-files '("/Users/peter/files/gtd/inbox.org"))
  '(package-selected-packages
-   '(vue-mode web-beautify jenkins pdf-tools origami vdiff gradle-mode inf-mongo nyan-mode geben ansible groovy-mode nginx-mode lsp-php htmlize emms gnuplot go-mode csv-mode rg oneonone zop-to-char zenburn-theme yaml-mode xref-js2 window-number which-key wgrep web-mode volatile-highlights use-package typescript-mode twilight-theme twilight-bright-theme tiny super-save smex smartrep smartparens smart-mode-line-powerline-theme scss-mode rainbow-mode rainbow-delimiters protobuf-mode projectile php-mode operate-on-number move-text molokai-theme mic-paren magit lua-mode lsp-ui lsp-java keyfreq json-mode js2-refactor js-doc imenu-anywhere iedit ido-completing-read+ hl-todo highlight-parentheses guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck flx-ido expand-region exec-path-from-shell evil-visualstar evil-surround evil-numbers evil-matchit evil-leader editorconfig easy-kill dockerfile-mode discover-my-major diminish diff-hl crux cquery counsel company-lsp browse-kill-ring beacon anzu ag ace-window))
- '(tramp-copy-size-limit 102400)
- '(tramp-inline-compress-start-size 100000))
+   '(rainbow-mode php-mode evil-matchit lua-mode web-mode scss-mode tide json-mode js2-mode flycheck-plantuml plantuml-mode nginx-mode counsel-projectile counsel swiper ivy smex ido-completing-read+ flx-ido dap-mode lsp-ui company-lsp company gnuplot evil-magit evil-ediff evil-leader evil-numbers evil-visualstar evil-surround evil window-number smart-mode-line-powerline-theme smart-mode-line powerline twilight-bright-theme twilight-theme molokai-theme use-package exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -18,10 +18,9 @@
 
 (defvar rezo-emms-dir (expand-file-name "private/music/" rezo-dir-default) "音乐文件存放根路径" )
 
-(defvar rezo-gtd-dir (expand-file-name "gtd" rezo-dir-default) "gdt根目录" )
+(defvar rezo-gtd-dir (expand-file-name "private/org/" rezo-dir-default) "gdt根目录" )
 (defvar rezo-gtd-dict (expand-file-name "dictionary.org" rezo-gtd-dir) "术语词汇文件路径" )
 (defvar rezo-gtd-inbox (expand-file-name "inbox.org" rezo-gtd-dir) "GDT杂项文件存放路径" )
-(defvar rezo-gtd-leagcy (expand-file-name "leagcy.org" rezo-gtd-dir) "GDT上一版文件汇总" )
 
 ;; 2019-08-07 Fix:error: Package ‘undo-tree-’ is unavailable
 ;; From https://github.com/bbatsov/prelude/issues/1225

@@ -40,7 +40,7 @@
 (add-to-list 'auto-mode-alist '("\\.org\\’" . org-mode))
 
 ;; 定义org-agenda读取的文件
-(setq org-agenda-files (list rezo-gtd-leagcy rezo-gtd-inbox))
+(setq org-agenda-files (list rezo-gtd-inbox))
 
 ;; for maxima
 (org-babel-do-load-languages

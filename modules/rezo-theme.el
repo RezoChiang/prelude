@@ -41,6 +41,7 @@
 
 ;; ediff 垂直分割
 (setq ediff-split-window-function 'split-window-horizontally)
+(global-nlinum-mode -1)
 
 ;; 设置字体字号, 第二条语句设置daemon模式下的字体
 (defun rezo/better-font()
