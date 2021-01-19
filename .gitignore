@@ -27,3 +27,6 @@ ido.last
 bookmarks
 .lsp-session-v1
 transient/
+var/
+.cache/
+.lsp-session*

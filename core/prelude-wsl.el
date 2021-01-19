@@ -1,15 +1,14 @@
-;;; prelude-company.el --- company-mode setup
+;;; prelude-wsl.el --- Emacs Prelude: WSL-specific setup.
 ;;
 ;; Copyright © 2011-2020 Bozhidar Batsov
 ;;
-;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
 
 ;; This file is not part of GNU Emacs.
 
 ;;; Commentary:
 
-;; company-mode config.
+;; Additional setup that's useful when running Emacs in WSL.
 
 ;;; License:
 
@@ -29,22 +28,15 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code:
-(prelude-require-packages '(company))
 
-(require 'company)
-(require 'diminish)
+;; teach Emacs how to open links with your default browser
+(let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
+      (cmd-args '("/c" "start")))
+  (when (file-exists-p cmd-exe)
+    (setq browse-url-generic-program  cmd-exe
+          browse-url-generic-args     cmd-args
+          browse-url-browser-function 'browse-url-generic
+          search-web-default-browser 'browse-url-generic)))
 
-(setq company-idle-delay 0.5)
-(setq company-show-numbers t)
-(setq company-tooltip-limit 10)
-(setq company-minimum-prefix-length 2)
-(setq company-tooltip-align-annotations t)
-;; invert the navigation direction if the the completion popup-isearch-match
-;; is displayed on top (happens near the bottom of windows)
-(setq company-tooltip-flip-when-above t)
-
-(global-company-mode 1)
-(diminish 'global-company-mode)
-
-(provide 'prelude-company)
-;;; prelude-company.el ends here
+(provide 'prelude-wsl)
+;;; prelude-wsl.el ends here
