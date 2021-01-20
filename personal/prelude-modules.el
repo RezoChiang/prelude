@@ -68,5 +68,5 @@
 ;; (require 'oneonone)
 ;;(require 'rezo-lsp-js)
 ;; (require 'rezo-oxpublish)
-;; (require 'rezo-emms)
+(require 'rezo-emms)
 ;;; prelude-modules.el ends here
