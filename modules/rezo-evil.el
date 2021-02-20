@@ -98,6 +98,10 @@
 (define-key evil-visual-state-map (kbd ">") 'prelude-shift-right-visual)
 (define-key evil-visual-state-map (kbd "<") 'prelude-shift-left-visual)
 
+;; 2021/02/20 - 纠正回退不起作用的问题
+(define-key evil-normal-state-map (kbd "u") 'undo-tree-undo)
+(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+
 ;; Scrolling
 (defun rezo-evil-scroll-down-other-window ()
   (interactive)
