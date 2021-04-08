@@ -42,13 +42,13 @@
   :config
   )
 
-(use-package company-lsp
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq company-lsp-enable-recompletion t)
-  (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
-  )
+;; (use-package company-lsp
+;;   :ensure t
+;;   :after lsp-mode
+;;   :config
+;;   (setq company-lsp-enable-recompletion t)
+;;   (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
+;;   )
 
 (use-package lsp-lua-emmy
   :demand
@@ -63,7 +63,6 @@
   "Set lua company backend."
   (setq-local company-backends '(
                                  (
-                                  company-lsp
                                   company-lua
                                   company-keywords
                                   company-gtags

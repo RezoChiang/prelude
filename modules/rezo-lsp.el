@@ -32,12 +32,10 @@
 
 ;;; Code:
 
-(prelude-require-packages '(company-lsp
-                            lsp-mode
+(prelude-require-packages '(lsp-mode
                             lsp-ui))
 
 (require 'lsp-ui)
-(require 'company-lsp)
 (require 'lsp-ui-imenu)
 (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
 (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
@@ -49,7 +47,7 @@
 (define-key lsp-ui-mode-map (kbd "C-c C-l i") 'lsp-ui-peek-find-implementation)
 (define-key lsp-ui-mode-map (kbd "C-c C-l d") 'lsp-describe-thing-at-point)
 
-
+(setq read-process-output-max (* 1024 1024))
 (setq lsp-print-io t)
 (setq lsp-ui-sideline-enable t)
 (setq lsp-ui-doc-enable nil)

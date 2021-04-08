@@ -42,11 +42,11 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'"    . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-;; (lsp-register-client
-;;  (make-lsp-client :new-connection (lsp-stdio-connection "javascript-typescript-stdio")
-;;                   :major-modes '(js2-mode)
-;;                   :server-id 'javascript-typescript-stdio))
-;; (setq typescript-indent-level 2)
+(lsp-register-client
+ (make-lsp-client :new-connection (lsp-stdio-connection "javascript-typescript-stdio")
+                  :major-modes '(js2-mode)
+                  :server-id 'javascript-typescript-stdio))
+(setq typescript-indent-level 2)
 
 ;;; Code:
 (setq js2-strict-missing-semi-warning nil)
