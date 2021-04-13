@@ -37,9 +37,12 @@
 (require 'emms-source-playlist)
 (require 'emms-player-mplayer)
 
+;; 2019-09-18 这个方式失效了, -novideo无法添加到参数, 更换了新的方式
 ;; (append emms-player-mplayer-parameters (list "-novideo"))
-;; 2019-09-18 之前的方式失效, -novideo无法添加到参数, 更换了新的方式
-'(emms-player-mplayer-parameters (quote ("-slave" "-quiet" "-really-quiet" "-novideo")))
+;; 201-04-13 这个从来没有成功过
+;; '(emms-player-mplayer-parameters (quote ("-slave" "-quiet" "-really-quiet" "-novideo")))
+;; 201-04-13 注意这里要包含所有参数
+(setq emms-player-mplayer-parameters '("-slave" "-quiet" "-really-quiet" "-novideo"))
 (setq emms-player-list '(emms-player-mplayer))
 (setq emms-source-file-default-directory rezo-emms-dir)
 (setq emms-playlist-buffer-name "*emms-playlist")
