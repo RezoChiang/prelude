@@ -46,9 +46,9 @@
 (setq evil-mode-line-format 'before)
 
 (setq evil-emacs-state-cursor  '("red" box))
-(setq evil-normal-state-cursor '("gray" box))
+(setq evil-normal-state-cursor '("#000" box))
 (setq evil-visual-state-cursor '("gray" box))
-(setq evil-insert-state-cursor '("gray" bar))
+(setq evil-insert-state-cursor '("orange" bar))
 (setq evil-motion-state-cursor '("gray" box))
 
 ;; prevent esc-key from translating to meta-key in terminal mode
